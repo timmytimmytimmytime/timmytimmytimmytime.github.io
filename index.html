@@ -440,6 +440,36 @@
             }
         }
 
+        /* Grey out projects 2-5, keep project 1 normal */
+        .project-card:nth-child(n+2) {
+            opacity: 0.4;
+            filter: grayscale(70%);
+            pointer-events: none;
+        }
+
+        .project-card:nth-child(n+2) .project-title {
+            color: #888 !important;
+        }
+
+        .project-card:nth-child(n+2) .project-description {
+            color: #666 !important;
+        }
+
+        .project-card:nth-child(n+2) .tech-tag {
+            background: rgba(136, 136, 136, 0.2) !important;
+            color: #888 !important;
+            border-color: rgba(136, 136, 136, 0.3) !important;
+        }
+
+        .project-card:nth-child(n+2) .project-link {
+            background: rgba(136, 136, 136, 0.3) !important;
+            color: #888 !important;
+            cursor: not-allowed;
+        }
+
+        .project-card:nth-child(n+2) .status-proposed {
+            background: rgba(136, 136, 136, 0.5) !important;
+        }
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -458,7 +488,7 @@
     <header>
         <div class="container">
             <h1 class="hero-title">Timothy Mosby</h1>
-            <p class="hero-subtitle">XR Engineer & Patent Inventor</p>
+            <p class="hero-subtitle">XR Engineer & Inventor</p>
             <p class="hero-description">Building the future of spatial computing through gesture-based interfaces and immersive experiences</p>
         </div>
     </header>
@@ -592,7 +622,14 @@
         <div class="container">
             <div class="patent-card">
                 <h2 class="patent-title">Foundational Patent in Gesture Detection</h2>
-                <p class="patent-number">US8619036B2 - Virtual keyboard based activation and dismissal (2013)</p>
+                <p class="patent-number"><a href="https://patents.google.com/patent/US8619036" target="_blank" style="color: #64b5f6; text-decoration: none;">US8619036B2 - Virtual keyboard based activation and dismissal (2013)</a></p>
+                
+                <div class="patent-image" style="margin: 30px 0; text-align: center;">
+                    <img src="https://patentimages.storage.googleapis.com/21/d7/bf/d282120b335de7/US08619036-20131231-D00004.png" 
+                         alt="Patent diagram showing virtual keyboard positioning based on hand placement" 
+                         style="max-width: 25%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                </div>
+
                 <p class="patent-description">
                     Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips on touch surfaces.
                 </p>
