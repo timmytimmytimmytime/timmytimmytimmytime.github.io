@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Mosby - XR Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0f0f0f;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f0f0f, #1a1a2e, #16213e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(100, 181, 246, 0.6);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #b3b3b3;
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #64b5f6, #42a5f5);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #f5f5f5;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(100, 181, 246, 0.2);
+            border-color: rgba(100, 181, 246, 0.3);
+        }
+
+        .project-number {
+            font-size: 3rem;
+            font-weight: 100;
+            color: rgba(100, 181, 246, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: #ccc;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .status-current {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+        }
+
+        .status-proposed {
+            background: linear-gradient(135deg, #ff7043, #ff8a65);
+            color: white;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: rgba(100, 181, 246, 0.2);
+            color: #64b5f6;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(100, 181, 246, 0.3);
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            border: 2px solid rgba(100, 181, 246, 0.5);
+            color: #64b5f6;
+        }
+
+        .project-link.secondary:hover {
+            background: rgba(100, 181, 246, 0.1);
+        }
+
+        /* Patent Section */
+        .patent-section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .patent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .patent-title {
+            font-size: 2rem;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+        }
+
+        .patent-number {
+            font-size: 1.2rem;
+            color: #64b5f6;
+            margin-bottom: 30px;
+            font-family: monospace;
+        }
+
+        .patent-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .patent-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #64b5f6;
+            display: block;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(100, 181, 246, 0.1);
+            border-color: #64b5f6;
+            color: #64b5f6;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .project-card {
+                padding: 30px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .patent-card {
+                padding: 30px;
+            }
+            
+            .patent-stats {
+                gap: 20px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: rgba(100, 181, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <div class="container">
+            <h1 class="hero-title">Timothy Mosby</h1>
+            <p class="hero-subtitle">XR Engineer & Patent Inventor</p>
+            <p class="hero-description">Building the future of spatial computing through gesture-based interfaces and immersive experiences</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#patent">Patent</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">XR Projects Portfolio</h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h3 class="project-title">Hand Tracking Sign Language App</h3>
+                    <div class="project-status status-current">Current Development</div>
+                    <p class="project-description">
+                        XR application teaching baby sign language through hand-tracked interactions. Built with Unity, OpenXR, and Meta Quest 3, combining foundational gesture detection expertise with accessible education technology.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">OpenXR</span>
+                        <span class="tech-tag">Meta Quest 3</span>
+                        <span class="tech-tag">Hand Tracking</span>
+                        <span class="tech-tag">C#</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h3 class="project-title">OpenCV Gesture Recognition Library</h3>
+                    <div class="project-status status-proposed">Proposed</div>
+                    <p class="project-description">
+                        Open-source computer vision toolkit for XR developers, implementing gesture detection algorithms inspired by foundational keyboard positioning research. Published on GitHub with Unity integration examples.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Unity SDK</span>
+                        <span class="tech-tag">GitHub</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Coming Soon</a>
+                        <a href="#" class="project-link secondary">Documentation</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3 class="project-title">XREAL One Pro Spatial Computing Study</h3>
+                    <div class="project-status status-proposed">Proposed</div>
+                    <p class="project-description">
+                        Comparative analysis of lightweight AR glasses vs. headset-based spatial computing. Exploring hand tracking accuracy, FOV limitations, and social acceptability of glasses-form-factor AR using XREAL SDK 3.0.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">XREAL SDK 3.0</span>
+                        <span class="tech-tag">Unity XR</span>
+                        <span class="tech-tag">AR Foundation</span>
+                        <span class="tech-tag">Applied Research</span>
+                        <span class="tech-tag">UX Study</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Research Plan</a>
+                        <a href="#" class="project-link secondary">Methodology</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-number">04</div>
+                    <h3 class="project-title">Cross-Platform AR Gesture Framework</h3>
+                    <div class="project-status status-proposed">Proposed</div>
+                    <p class="project-description">
+                        Multi-device gesture recognition system supporting XREAL One Pro, Meta Quest, and iOS ARKit. Investigating gesture consistency across different tracking systems and form factors with published compatibility matrix.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Cross-Platform</span>
+                        <span class="tech-tag">ARKit</span>
+                        <span class="tech-tag">Meta XR SDK</span>
+                        <span class="tech-tag">XREAL SDK</span>
+                        <span class="tech-tag">Gesture Recognition</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Framework Design</a>
+                        <a href="#" class="project-link secondary">API Reference</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-number">05</div>
+                    <h3 class="project-title">Lightweight AR Collaboration Prototype</h3>
+                    <div class="project-status status-proposed">Proposed</div>
+                    <p class="project-description">
+                        XREAL-based shared workspace application exploring persistent spatial anchors and multi-user hand tracking. Compares social AR interaction patterns between glasses vs. headset form factors.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Spatial Anchors</span>
+                        <span class="tech-tag">Multi-User AR</span>
+                        <span class="tech-tag">XREAL SDK</span>
+                        <span class="tech-tag">Collaboration</span>
+                        <span class="tech-tag">Social Computing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Prototype</a>
+                        <a href="#" class="project-link secondary">Use Cases</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patent" class="patent-section">
+        <div class="container">
+            <div class="patent-card">
+                <h2 class="patent-title">Foundational Patent in Gesture Detection</h2>
+                <p class="patent-number">US8619036B2 - Virtual keyboard based activation and dismissal (2013)</p>
+                <p class="patent-description">
+                    Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips on touch surfaces.
+                </p>
+                <div class="patent-stats">
+                    <div class="stat">
+                        <span class="stat-number">146+</span>
+                        <span class="stat-label">Forward Citations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Major Tech Companies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Years Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Build the Future Together</h2>
+            <p style="color: #ccc; font-size: 1.1rem;">Ready to discuss XR innovation and spatial computing opportunities?</p>
+            
+            <div class="contact-links">
+                <a href="mailto:timothy.mosby@gmail.com" class="contact-link">
+                    <span>📧</span>
+                    <span>timothy.mosby@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/timothymosby" class="contact-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/timothymosby" class="contact-link">
+                    <span>⚡</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="tel:+12066500141" class="contact-link">
+                    <span>📱</span>
+                    <span>(206) 650-0141</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            
+            function addParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                
+                particlesContainer.appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 6000);
+            }
+            
+            // Add particles periodically
+            setInterval(addParticle, 300);
+            
+            // Add initial particles
+            for (let i = 0; i < 10; i++) {
+                setTimeout(addParticle, i * 200);
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+        
+        // Add parallax effect to project cards
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach((card, index) => {
+                const rate = scrolled * -0.1;
+                card.style.transform = `translateY(${rate}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
