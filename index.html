@@ -441,33 +441,33 @@
         }
 
         /* Grey out projects 2-5, keep project 1 normal */
-        .project-card:nth-child(n+2) {
+        .project-card:nth-child(n+3) {
             opacity: 0.4;
             filter: grayscale(70%);
             pointer-events: none;
         }
 
-        .project-card:nth-child(n+2) .project-title {
+        .project-card:nth-child(n+3) .project-title {
             color: #888 !important;
         }
 
-        .project-card:nth-child(n+2) .project-description {
+        .project-card:nth-child(n+3) .project-description {
             color: #666 !important;
         }
 
-        .project-card:nth-child(n+2) .tech-tag {
+        .project-card:nth-child(n+3) .tech-tag {
             background: rgba(136, 136, 136, 0.2) !important;
             color: #888 !important;
             border-color: rgba(136, 136, 136, 0.3) !important;
         }
 
-        .project-card:nth-child(n+2) .project-link {
+        .project-card:nth-child(n+3) .project-link {
             background: rgba(136, 136, 136, 0.3) !important;
             color: #888 !important;
             cursor: not-allowed;
         }
 
-        .project-card:nth-child(n+2) .status-proposed {
+        .project-card:nth-child(n+3) .status-proposed {
             background: rgba(136, 136, 136, 0.5) !important;
         }
         /* Smooth scrolling */
@@ -534,21 +534,22 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-number">02</div>
-                    <h3 class="project-title">OpenCV Gesture Recognition Library</h3>
-                    <div class="project-status status-proposed">Proposed</div>
+                    <h3 class="project-title">OpenCV - AirType - 3D Spatial Keyboard</h3>
+                    <div class="project-status status-proposed">Working Prototype</div>
                     <p class="project-description">
-                        Open-source computer vision toolkit for XR developers, implementing gesture detection algorithms inspired by foundational keyboard positioning research. Published on GitHub with Unity integration examples.
+                        Computer vision hand tracking system enabling text input through mid-air finger gestures. No physical keyboard required - type by extending fingers in 3D space using natural hand positioning.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">MediaPipe</span>
                         <span class="tech-tag">Computer Vision</span>
-                        <span class="tech-tag">Unity SDK</span>
-                        <span class="tech-tag">GitHub</span>
-                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Hand Tracking</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Real-time Detection</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Coming Soon</a>
-                        <a href="#" class="project-link secondary">Documentation</a>
+                        <a href="#" class="project-link">View Demo</a>
+                        <a href="#" class="project-link secondary">GitHub</a>
                     </div>
                 </div>
 
