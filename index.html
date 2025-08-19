@@ -441,33 +441,33 @@
         }
 
         /* Grey out projects 2-5, keep project 1 normal */
-        .project-card:nth-child(n+3) {
+        .project-card:nth-child(n+4) {
             opacity: 0.4;
             filter: grayscale(70%);
             pointer-events: none;
         }
 
-        .project-card:nth-child(n+3) .project-title {
+        .project-card:nth-child(n+4) .project-title {
             color: #888 !important;
         }
 
-        .project-card:nth-child(n+3) .project-description {
+        .project-card:nth-child(n+4) .project-description {
             color: #666 !important;
         }
 
-        .project-card:nth-child(n+3) .tech-tag {
+        .project-card:nth-child(n+4) .tech-tag {
             background: rgba(136, 136, 136, 0.2) !important;
             color: #888 !important;
             border-color: rgba(136, 136, 136, 0.3) !important;
         }
 
-        .project-card:nth-child(n+3) .project-link {
+        .project-card:nth-child(n+4) .project-link {
             background: rgba(136, 136, 136, 0.3) !important;
             color: #888 !important;
             cursor: not-allowed;
         }
 
-        .project-card:nth-child(n+3) .status-proposed {
+        .project-card:nth-child(n+4) .status-proposed {
             background: rgba(136, 136, 136, 0.5) !important;
         }
         /* Smooth scrolling */
@@ -578,12 +578,34 @@
                     </div>
                     <div class="project-links">
                         <!-- <a href="#" class="project-link">View Demo</a> -->
-                        <button onclick="openModal()" class="project-link">View Demo</button>
+                        <button onclick="openModal('airtype')" class="project-link">View Demo</button>
                         <a href="https://github.com/timmytimmytimmytime/AirType" class="project-link secondary">GitHub</a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3 class="project-title">Cartoon Face Expression Mapper</h3>
+                    <div class="project-status status-proposed">Working Prototype</div>
+                    <p class="project-description">
+                        Real-time facial expression mapping to animated cartoon characters using computer vision. MediaPipe face
+                        tracking with custom cartoon character support and landmark detection.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Real-time Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <button onclick="openModal('facemapper')" class="project-link">View Demo</button>
+                        <a href="https://github.com/timmytimmytimmytime/FaceMoCap" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-number">03</div>
                     <h3 class="project-title">XREAL One Pro Spatial Computing Study</h3>
@@ -604,7 +626,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-number">04</div>
                     <h3 class="project-title">Cross-Platform AR Gesture Framework</h3>
@@ -625,7 +647,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
+                <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-number">05</div>
                     <h3 class="project-title">Lightweight AR Collaboration Prototype</h3>
@@ -775,8 +797,29 @@
             });
         });
 
-        function openModal() {
-            document.getElementById('demoModal').style.display = 'block';
+        let currentProject = '';
+
+        function openModal(projectType = 'airtype') {
+            currentProject = projectType;
+            const modal = document.getElementById('demoModal');
+            const img = modal.querySelector('img');
+            
+            // Set the appropriate GIF based on project type
+            switch(projectType) {
+                case 'airtype':
+                    img.src = 'assets/AirType-demo.gif';
+                    img.alt = 'AirType Demo';
+                    break;
+                case 'facemapper':
+                    img.src = 'assets/FaceMoCap-demo.gif';
+                    img.alt = 'Face Mapper Demo';
+                    break;
+                default:
+                    img.src = 'assets/AirType-demo.gif';
+                    img.alt = 'Demo';
+            }
+            
+            modal.style.display = 'block';
         }
 
         function closeModal() {
