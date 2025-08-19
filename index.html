@@ -479,6 +479,35 @@
         ::selection {
             background: rgba(100, 181, 246, 0.3);
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            }
+
+            .modal-content {
+            position: relative;
+            margin: 10% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            }
+
+            .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            }
     </style>
 </head>
 <body>
@@ -548,8 +577,9 @@
                         <span class="tech-tag">Real-time Detection</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link secondary">GitHub</a>
+                        <!-- <a href="#" class="project-link">View Demo</a> -->
+                        <button onclick="openModal()" class="project-link">View Demo</button>
+                        <a href="https://github.com/timmytimmytimmytime/AirType" class="project-link secondary">GitHub</a>
                     </div>
                 </div>
 
@@ -678,6 +708,14 @@
         </div>
     </section>
 
+    <!-- Modal -->
+    <div id="demoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="assets/AirType-demo.gif" alt="AirType Demo" style="width: 100%; max-width: 600px;">
+    </div>
+    </div>
+
     <script>
         // Create floating particles
         function createParticles() {
@@ -736,6 +774,23 @@
                 card.style.transform = `translateY(${rate}px)`;
             });
         });
+
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('demoModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
     </script>
 </body>
 </html>
