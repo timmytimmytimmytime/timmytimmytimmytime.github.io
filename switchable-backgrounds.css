@@ -230,14 +230,17 @@ body[data-background="wireframe"]::before {
 /* Blueprint */
 body[data-background="blueprint"] {
     background-color: #1a1a1a !important;
+    /* background-color: #070D21 !important; */
+    background-color: #1B0F02 !important;
+
 }
 
 body[data-background="blueprint"]::before {
     background-image: 
-        linear-gradient(rgba(100, 200, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 200, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(rgba(100, 200, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 200, 255, 0.015) 1px, transparent 1px);
+        linear-gradient(rgba(57, 255, 20, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 255, 20, 0.12) 1px, transparent 1px),
+        linear-gradient(rgba(57, 255, 20, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 255, 20, 0.08) 1px, transparent 1px);
     background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
 }
 

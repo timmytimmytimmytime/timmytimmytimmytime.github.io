@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Patent Plaque</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #0f172a;
+            color: #94a3b8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            transform: scale(0.8); /* Shrinks content to 80% */
+            transform-origin: top   ;
+        }
+        
+        .patent-plaque {
+            width: 380px;
+            height: 560px;
+            border: 24px solid #3a3a44;
+            border-radius: 2px;
+            background: linear-gradient(94deg, #a3a6ab 0%, #e1e1e2 50%, #909297 100%);
+            color: #111827;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-align: center;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        
+        .inventor {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .patent-info {
+            font-size: 12px;
+            text-align: center;
+            font-style:italic;
+            margin-bottom: 6px;
+            color: #374151;
+        }
+        
+        .description {
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #4b5563;
+            margin: 16px 20px;
+        }
+
+        .diagram {
+            /* min-width: 0; */
+            border: 1px solid #6b7280;
+            background: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+            color: #6b7280;
+            /* margin-bottom: 16px; */
+        }
+
+        .patent-image {
+            min-width: 0;
+            max-width: 300px;
+            object-fit:cover;
+        }
+        
+        .metrics {
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            color: #4b5563;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .metrics div {
+            margin-bottom: 2px;
+        }
+        
+        .view-patent {
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            margin-top: 20px;
+        }
+        
+        .view-patent:hover {
+            color: #ccd9f4;
+        }
+
+        .external-link {
+            color: #64b5f6;
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+        }
+
+        .view-patent:hover .external-link {
+            transform: translate(2px, -2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="patent-plaque">
+        <!-- <div class="patent-info">United States Patent</div> -->
+        <div class="title">Virtual Keyboard Based</br>Activation and Dismissal</div>
+        <div class="patent-info">US Patent: US8619036B2, Dec 31 2013</div>
+        <div class="inventor">Timothy Mosby - Inventor</div>
+    
+        <div class="diagram">
+            <img src="/assets/PatentIllustration.png" 
+                    alt="Virtual Keyboard Patent Diagram" 
+                    class="patent-image"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 6px; color: #6b7280;">[Hand/Keyboard Diagram]</div>
+        </div>
+
+
+        <div class="description">Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips</div>
+        <div class="metrics">
+            <div>⭐ Cited by 146+ patents in related technology fields</div>
+            <div>🏢 Referenced by Apple, Google, and Microsoft</div>
+            <div>📅 Active patent for 12+ Years</div>
+        </div>
+        <div>
+            <img style="width: 50px; height: 50px" src="/assets/Seal_of_the_United_States_Patent_and_Trademark_Office.svg"/>
+        </div>
+    </div>
+    <!-- <div class="view-patent" href="https://patents.google.com/patent/US8619036" >• View Patent •</div> -->
+    <a style="text-decoration: none;" target=“_blank” href="https://patents.google.com/patent/US8619036" class="view-patent">• View Patent •</a>
+    <!-- <span class="external-link">↗</span> -->
+</body>
+</html>
