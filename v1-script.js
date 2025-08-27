@@ -27,38 +27,90 @@ let currentProject = "";
 
 function openModal(projectType = "airtype") {
   currentProject = projectType;
-  const modal = document.getElementById("demoModal");
-  const img = modal.querySelector("img");
+  var modal = null;
+  if (projectType == "signlang") {
+    modal = document.getElementById("demoVidModal");
+    const video = modal.querySelector("video");
+    video.src = "assets/sign-language-alphebet.MP4";
+    video.alt = "Sign Language Experiment Demo";
 
-  // Set the appropriate GIF based on project type
-  switch (projectType) {
-    case "airtype":
-      img.src = "assets/AirType-demo.gif";
-      img.alt = "AirType Demo";
-      break;
-    case "facemapper":
-      img.src = "assets/FaceMoCap-demo.gif";
-      img.alt = "Face Mapper Demo";
-      break;
-    default:
-      img.src = "assets/AirType-demo.gif";
-      img.alt = "Demo";
+    video.addEventListener("loadeddata", function () {
+      video.playbackRate = 1.5;
+    });
+
+    video.play();
+  } else {
+    modal = document.getElementById("demoGifModal");
+    const img = modal.querySelector("img");
+
+    // Set the appropriate GIF based on project type
+    switch (projectType) {
+      case "airtype":
+        img.src = "assets/AirType-demo.gif";
+        img.alt = "AirType Demo";
+        break;
+      case "facemapper":
+        img.src = "assets/FaceMoCap-demo.gif";
+        img.alt = "Face Mapper Demo";
+        break;
+      default:
+        img.src = "assets/AirType-demo.gif";
+        img.alt = "Demo";
+    }
   }
-
   modal.style.display = "block";
 }
 
 function closeModal() {
-  document.getElementById("demoModal").style.display = "none";
+  document.getElementById("demoVidModal").style.display = "none";
+  document.getElementById("demoGifModal").style.display = "none";
 }
 
 // Close on outside click
 window.onclick = function (event) {
-  const modal = document.getElementById("demoModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+  const modals = ["demoVidModal", "demoGifModal"];
+  modals.forEach((m) => {
+    const modal = document.getElementById(m);
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
 };
+
+// function openModal(projectType = "airtype") {
+//   currentProject = projectType;
+//   const modal = document.getElementById("demoModal");
+//   const img = modal.querySelector("img");
+
+//   // Set the appropriate GIF based on project type
+//   switch (projectType) {
+//     case "airtype":
+//       img.src = "assets/AirType-demo.gif";
+//       img.alt = "AirType Demo";
+//       break;
+//     case "facemapper":
+//       img.src = "assets/FaceMoCap-demo.gif";
+//       img.alt = "Face Mapper Demo";
+//       break;
+//     default:
+//       img.src = "assets/AirType-demo.gif";
+//       img.alt = "Demo";
+//   }
+
+//   modal.style.display = "block";
+// }
+
+// function closeModal() {
+//   document.getElementById("demoModal").style.display = "none";
+// }
+
+// // Close on outside click
+// window.onclick = function (event) {
+//   const modal = document.getElementById("demoModal");
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Add event listeners for demo GIFs
 document.addEventListener("DOMContentLoaded", function () {

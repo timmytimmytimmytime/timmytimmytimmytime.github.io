@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="switchable-backgrounds.css">
-    <link rel="stylesheet" href="portfolio.css  ">
+    <link rel="stylesheet" href="v1-script.css  ">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timothy Mosby - Portfolio</title>
@@ -122,7 +122,8 @@
                         <span class="tech-tag">C#</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
+                        <!-- <button onclick="openModal('signlang')" class="project-link">View Demo</button> -->
+                        <button onclick="openModal('signlang')" class="project-link">View Demo</button>
                         <a href="#" class="project-link secondary">GitHub</a>
                     </div>
                 </div>
@@ -228,13 +229,13 @@
     </section>
 
     <!-- Modal -->
-    <div id="demoModal" class="modal">
+    <div id="demoGifModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <img src="assets/AirType-demo.gif" alt="AirType Demo" style="width: 100%; max-width: 600px;">
     </div>
     </div>
 
-    <script src="protfolio.js"></script>
+    <script src="v1-script.js"></script>
 </body>
 </html>
