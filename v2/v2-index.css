@@ -42,7 +42,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: flex-start; 
     padding: 96px 0;
     padding-right: 32px;
 }
@@ -108,13 +109,23 @@ body {
     background-color: #e2e8f0;
 }
 
-.patent {
-    height: 560px;
+.patent-iframe {
+    /* 428 x 608 is the patent's size, IIRC */ 
+    height: 524px;
+    min-width: 380px;
     padding: 0;
     margin: 0;
     border: none;
-    margin-top: 32px;
-    transform: scale(0.5);
+    transform: scale(0.4);
+    transform-origin: 0 0;
+
+    /* flex-shrink: 0;
+    width: 240px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 6px; */
+    /* border: 1px solid #334155; */
+
 }
 
 .resume-cta-button {

@@ -21,6 +21,10 @@
                             <span class="nav-indicator"></span>
                             <span class="nav-text">About</span>
                         </a>
+                        <a href="#patent" class="nav-link">
+                            <span class="nav-indicator"></span>
+                            <span class="nav-text">Patent</span>
+                        </a>
                         <a href="#projects" class="nav-link">
                             <span class="nav-indicator"></span>
                             <span class="nav-text">Projects</span>
@@ -32,8 +36,8 @@
                     </nav>
                 </header>
     
-                <iframe class="patent" src="/v2/patent2.html" width="400px" scrolling="no">
-                </iframe>
+                    <!-- <iframe class="patent" src="/v2/patent2.html" width="400px" scrolling="no">
+                    </iframe> -->
                     <!-- 428 x 608 -->  
             </div>
             
@@ -72,7 +76,7 @@
                             
                             <p>Currently architecting an XR application for interactive sign language learning, focusing on precise hand tracking and real-time feedback systems using OpenXR and Unity's XR Hands.</p>
                             
-                            <p>When I'm not coding, you can find me exploring new XR technologies, contributing to open-source projects, or working on computer vision experiments.</p>
+                            <p>In my downtime you can find me at the chilling at the lake, boardgaming, painting minis, and playing Helldivers 2 with my friends.</p>
                         </div>
                     </div>
                 </section>
@@ -85,27 +89,34 @@
                         </div>
                         
                         <div class="projects-list">
-                            <div class="project-item">
-                                <div class="project-image">
-                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=XR+App" alt="Hand Tracking Sign Language App">
+                        <!-- <button onclick="openModal('facemapper')" class="project-link">View Demo</button> -->
+
+                            <div class="project-item" onclick="openPatentModal()">
+                                <div style="max-height: 200px; width: 160px;">
+                                    <iframe class="patent-iframe" src="/v2/patent2.html" height="200px" scrolling="no">
+                                    </iframe>
                                 </div>
                                 <div class="project-details">
                                     <h4>
-                                        <a href="#" class="project-title">Hand Tracking Sign Language App</a>
+                                        <!-- <a href="https://patents.google.com/patent/US8619036" class="project-title" target="_blank">Patent: Virtual Keyboard Based Activation and Dismissal (US8619036B2)</a>
+                                        <span class="external-link">↗</span> -->
+
+                                        <a href="..." class="project-title">Patent: Virtual Keyboard Based Activation and Dismissal</br>US Patent: US8619036B2, Dec 31 2013</a>
+                                        <!-- <div class="patent-number">US Patent: US8619036B2, Dec 31 2013</div> -->
                                         <span class="external-link">↗</span>
-                                    </h4>
+                                    </h4>                                      
+
+                                    <!-- <label>
+                                        US Patent: US8619036B2, Dec 31 2013
+                                    </label> -->
                                     <p class="project-description">
-                                        XR application teaching baby sign language through hand-tracked interactions. Built with Unity, OpenXR, and Meta Quest 3, combining foundational gesture detection expertise with accessible education technology.
+                                        Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips
                                     </p>
-                                    <ul class="tech-list">
-                                        <li>Unity</li>
-                                        <li>OpenXR</li>
-                                        <li>Meta Quest 3</li>
-                                        <li>Hand Tracking</li>
-                                        <li>C#</li>
-                                    </ul>
+                                    ⭐ 146+ Citations • 📱 Apple, Google, Microsoft • 📅 12+ Years Active
                                 </div>
+
                             </div>
+                        </div>
                     </div>
                 </section>
 

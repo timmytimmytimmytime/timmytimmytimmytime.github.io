@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle scroll events to update active navigation
   const observerOptions = {
     root: null,
-    rootMargin: "-50% 0px -50% 0px",
+    rootMargin: "-30% 0px -40% 0px",
+    // rootMargin: "-20% 0px -80% 0px",
+    // rootMargin: "-50% 0px -50% 0px",
     threshold: 0,
   };
 
@@ -226,4 +228,30 @@ document.addEventListener("DOMContentLoaded", function () {
     img.style.opacity = "0";
     img.style.transition = "opacity 0.3s ease";
   });
+});
+
+function openModal(projectType = "") {
+  currentProject = projectType;
+  const modal = document.getElementById("demoModal");
+  const img = modal.querySelector("img");
+
+  // Set the appropriate GIF based on project type
+  switch (projectType) {
+    case "airtype":
+      img.src = "assets/AirType-demo.gif";
+      img.alt = "AirType Demo";
+      break;
+    case "facemapper":
+      img.src = "assets/FaceMoCap-demo.gif";
+      img.alt = "Face Mapper Demo";
+      break;
+    default:
+      break;
+  }
+
+  modal.style.display = "block";
+}
+
+window.addEventListener("load", function () {
+  window.scrollTo(0, 0);
 });
