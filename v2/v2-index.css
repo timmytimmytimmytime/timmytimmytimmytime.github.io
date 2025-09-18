@@ -358,6 +358,30 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+
+.demo-gif-container {
+margin-bottom: 20px;
+text-align: center;
+height: auto; /* Remove fixed height */
+display: flex;
+align-items: flex-start;
+justify-content: center;
+overflow: visible; 
+min-height: 200px; 
+}
+
+.demo-gif {
+  width: auto;
+  max-width: 100%;   /* keep it responsive */
+  height: auto;
+  margin: 0 auto;    /* extra safety for centering */
+  display: block;    /* removes inline spacing */
+  object-fit: contain;
+  border: 2px solid rgba(100, 181, 246, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .project-media {
     display: flex;
     flex-direction: column;
@@ -370,8 +394,8 @@ body {
     width: 240px;
     height: 160px;
     overflow: hidden;
-    border-radius: 6px;
-    border: 1px solid #334155;
+    /* border-radius: 6px; */
+    /* border: 1px solid #334155; */
 }
 
 .project-image img {

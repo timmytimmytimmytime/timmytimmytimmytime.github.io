@@ -287,3 +287,45 @@ window.onclick = function (event) {
     }
   });
 };
+
+// Add event listeners for demo GIFs
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".demo-gif").forEach((gif) => {
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+  });
+});
+
+// Static GIF control - put in project-items.js
+document.addEventListener("DOMContentLoaded", function () {
+  const demoGifs = document.querySelectorAll(".demo-gif");
+
+  demoGifs.forEach((gif) => {
+    const originalSrc = gif.src;
+    const staticSrc = originalSrc.replace(".gif", "-static.jpg");
+
+    // Start with static image
+    gif.src = staticSrc;
+
+    // Get parent card
+    const card = gif.closest(".project-item");
+
+    // Play GIF on card hover
+    card.addEventListener("mouseenter", function () {
+      gif.src = originalSrc;
+    });
+
+    // Stop GIF on card leave
+    card.addEventListener("mouseleave", function () {
+      gif.src = staticSrc;
+    });
+
+    // Click handler for modal
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+  });
+});
