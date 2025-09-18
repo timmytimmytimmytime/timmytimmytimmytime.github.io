@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patent Plaque</title>
     <style>
         body {
@@ -14,13 +14,15 @@
             align-items: center;
             flex-direction: column;
             margin: 0;
-            transform: scale(0.8); /* Shrinks content to 80% */
+            /* transform: scale(0.8); */
             transform-origin: top   ;
         }
         
         .patent-plaque {
-            width: 380px;
-            height: 560px;
+            /* width: 380px;
+            height: 560px; */
+            width: min(90vw, 500px);  /* Responsive width */
+            height: min(90vh, 700px); /* Responsive height */
             border: 24px solid #3a3a44;
             border-radius: 2px;
             background: linear-gradient(94deg, #a3a6ab 0%, #e1e1e2 50%, #909297 100%);
@@ -151,8 +153,6 @@
             <img style="width: 50px; height: 50px" src="/assets/Seal_of_the_United_States_Patent_and_Trademark_Office.svg"/>
         </div>
     </div>
-    <!-- <div class="view-patent" href="https://patents.google.com/patent/US8619036" >• View Patent •</div> -->
-    <a style="text-decoration: none;" target=“_blank” href="https://patents.google.com/patent/US8619036" class="view-patent">• View Patent •</a>
-    <!-- <span class="external-link">↗</span> -->
+    <!-- <a style="text-decoration: none;" target=“_blank” href="https://patents.google.com/patent/US8619036" class="view-patent">• View Patent •</a> -->
 </body>
 </html>

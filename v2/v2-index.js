@@ -230,28 +230,60 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function openModal(projectType = "") {
+function openModal(projectType = "airtype") {
   currentProject = projectType;
-  const modal = document.getElementById("demoModal");
-  const img = modal.querySelector("img");
+  var modal = null;
+  if (projectType == "signlang") {
+    modal = document.getElementById("demoVidModal");
+    const video = modal.querySelector("video");
+    video.src = "assets/sign-language-alphebet.MP4";
+    video.alt = "Sign Language Experiment Demo";
 
-  // Set the appropriate GIF based on project type
-  switch (projectType) {
-    case "airtype":
-      img.src = "assets/AirType-demo.gif";
-      img.alt = "AirType Demo";
-      break;
-    case "facemapper":
-      img.src = "assets/FaceMoCap-demo.gif";
-      img.alt = "Face Mapper Demo";
-      break;
-    default:
-      break;
+    video.addEventListener("loadeddata", function () {
+      video.playbackRate = 1.5;
+    });
+
+    video.play();
+  } else if (projectType == "patent") {
+    // modal = document.getElementById("patentModal");
+    console.log("Opening patent modal");
+    modal = document.getElementById("patentModal");
+    console.log("Modal found:", modal);
+  } else {
+    modal = document.getElementById("demoGifModal");
+    const img = modal.querySelector("img");
+
+    // Set the appropriate GIF based on project type
+    switch (projectType) {
+      case "airtype":
+        img.src = "assets/AirType-demo.gif";
+        img.alt = "AirType Demo";
+        break;
+      case "facemapper":
+        img.src = "assets/FaceMoCap-demo.gif";
+        img.alt = "Face Mapper Demo";
+        break;
+      default:
+        img.src = "assets/AirType-demo.gif";
+        img.alt = "Demo";
+    }
   }
-
-  modal.style.display = "block";
+  modal.style.display = "flex";
 }
 
-window.addEventListener("load", function () {
-  window.scrollTo(0, 0);
-});
+function closeModal() {
+  document.getElementById("demoVidModal").style.display = "none";
+  document.getElementById("demoGifModal").style.display = "none";
+  document.getElementById("patentModal").style.display = "none";
+}
+
+// Close on outside click
+window.onclick = function (event) {
+  const modals = ["demoVidModal", "demoGifModal", "patentModal"];
+  modals.forEach((m) => {
+    const modal = document.getElementById(m);
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+};
