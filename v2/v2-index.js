@@ -28,41 +28,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Handle scroll events to update active navigation
-  const observerOptions = {
-    root: null,
-    rootMargin: "-30% 0px -40% 0px",
-    // rootMargin: "-20% 0px -80% 0px",
-    // rootMargin: "-50% 0px -50% 0px",
-    threshold: 0,
+  const setActiveNavLink = (sectionId) => {
+    navLinks.forEach((link) => link.classList.remove("active"));
+    const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+    }
   };
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.id;
+  const sectionsArray = Array.from(sections).filter((section) => section.id);
+  let sectionPositions = [];
 
-        // Remove active class from all nav links
-        navLinks.forEach((link) => link.classList.remove("active"));
+  const updateSectionPositions = () => {
+    sectionPositions = sectionsArray
+      .map((section) => ({
+        id: section.id,
+        top: section.getBoundingClientRect().top + window.scrollY,
+      }))
+      .sort((a, b) => a.top - b.top);
+  };
 
-        // Add active class to corresponding nav link
-        const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
-        if (activeLink) {
-          activeLink.classList.add("active");
-        }
+  const handleScroll = () => {
+    if (!sectionPositions.length) {
+      return;
+    }
+
+    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+    let currentSectionId = sectionPositions[0].id;
+
+    for (const section of sectionPositions) {
+      if (scrollPosition >= section.top) {
+        currentSectionId = section.id;
+      } else {
+        break;
       }
-    });
-  }, observerOptions);
+    }
 
-  // Observe all sections
-  sections.forEach((section) => {
-    observer.observe(section);
+    setActiveNavLink(currentSectionId);
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  updateSectionPositions();
+  handleScroll();
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    updateSectionPositions();
+    handleScroll();
   });
 
   // Mouse movement effect for experience and project items
-  const interactiveItems = document.querySelectorAll(
-    ".experience-item, .project-item"
-  );
+  const interactiveItems = document.querySelectorAll(".project-item");
 
   interactiveItems.forEach((item) => {
     item.addEventListener("mouseenter", function () {
@@ -75,9 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Smooth fade-in animation for sections on scroll
-  const fadeElements = document.querySelectorAll(
-    ".experience-item, .project-item"
-  );
+  const fadeElements = document.querySelectorAll(".project-item");
 
   const fadeObserver = new IntersectionObserver(
     function (entries) {
@@ -192,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     document.body.style.transition = "opacity 0.5s ease";
     document.body.style.opacity = "1";
+    updateSectionPositions();
+    handleScroll();
   });
 
   // Tech stack hover effects

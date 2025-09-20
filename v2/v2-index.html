@@ -14,26 +14,35 @@
                 <header class="header">
                     <h1>Timothy Mosby</h1>
                     <h2>Software Engineer & Inventor</h2>
-                    <p class="tagline">Building the future of spatial computing through gesture-based interfaces and immersive experiences.</p>
-                    
+                    <p class="tagline">Bridging digital and physical worlds — from patented gesture input and enterprise-scale mobile apps to today’s XR and computer vision prototypes.</p>
                     <nav class="nav">
                         <a href="#about" class="nav-link active">
                             <span class="nav-indicator"></span>
                             <span class="nav-text">About</span>
                         </a>
+                        <a href="#projects" class="nav-link">
+                            <span class="nav-indicator"></span>
+                            <span class="nav-text">XR Experiments</span>
+                        </a>
+                        <a href="#projects" class="nav-link">
+                            <span class="nav-indicator"></span>
+                            <span class="nav-text">Enterprise Work</span>
+                        </a>
                         <a href="#patent" class="nav-link">
                             <span class="nav-indicator"></span>
                             <span class="nav-text">Patent</span>
                         </a>
-                        <a href="#projects" class="nav-link">
+                        <!-- <a href="#projects" class="nav-link">
                             <span class="nav-indicator"></span>
                             <span class="nav-text">Projects</span>
-                        </a>
-                        <a href="#experience" class="nav-link">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">Experience</span>
-                        </a>
+                        </a> -->
                     </nav>
+
+                    <div class="resume-cta">
+                        <a href="assets/Timothy-Mosby-Resume.pdf" class="resume-cta-button" target="_blank" rel="noopener" download>
+                            Download Resume
+                        </a>
+                    </div>
                 </header>
     
                     <!-- <iframe class="patent" src="/v2/patent2.html" width="400px" scrolling="no">
@@ -70,50 +79,130 @@
                             <h3>About</h3>
                         </div>
                         <div class="about-content">
-                            <p>Customer-focused software engineer developing immersive applications for next-generation platforms. Inventor of foundational gesture patent with 146+ industry citations.</p>
+                            <p>Customer-focused software engineer with a decade of experience delivering mobile applications and websites to millions of users, and inventor of a gesture-based input patent with 146+ industry citations.</p>
+
+                            <p>From Microsoft Surface IR frameworks to Getty’s Contributor app, I specialize in bridging digital and physical interactions. Recent prototypes — AirType, CountAR, and FaceTrackAR — apply XR Hands and computer vision to advance more natural and intuitive interaction models.</p>
                             
-                            <p>Building touch interfaces and sensor test frameworks, from Microsoft Surface IR to cross-platform mobile applications. A passion for shaping the intersection where digital and physical worlds collide.</p>
-                            
-                            <p>Currently architecting an XR application for interactive sign language learning, focusing on precise hand tracking and real-time feedback systems using OpenXR and Unity's XR Hands.</p>
-                            
-                            <p>In my downtime you can find me at the chilling at the lake, boardgaming, painting minis, and playing</br>Helldivers 2 with my friends.</p>
+                            <p>Outside of work, I recharge through creative and social hobbies — from board games to painting minis.</p>
                         </div>
                     </div>
                 </section>
-
-                <!-- Patent Section -->
-                <section id="patent" class="section">
+                <!-- Projects Section -->
+                <section id="projects" class="section">
                     <div class="section-content">
                         <div class="section-header">
-                            <h3>Patents</h3>
+                            <h3>XR Experiments</h3>
                         </div>
                         
                         <div class="projects-list">
-                            <div class="project-item">
-                                <div style="max-height: 200px; width: 160px; cursor: pointer;" onclick="openModal('patent')" >
-                                    <iframe class="patent-iframe" src="/v2/patent2.html" height="200px" scrolling="no" style="pointer-events: none;">
-                                    </iframe>
-                                </div>
 
-                                <!-- <div style="max-height: 200px; width: 160px; cursor: pointer;" onclick="openModal('patent')">
-                                    <iframe class="patent-iframe" src="/v2/patent2.html" height="200px" scrolling="no" style="pointer-events: none;">
-                                    </iframe>
-                                </div> -->
+                            <!-- <div class="project-item">
+                                <div class="project-image">
+                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=XR+App" alt="Hand Tracking Sign Language App">
+                                </div>
                                 <div class="project-details">
                                     <h4>
-                                        <a href="https://patents.google.com/patent/US8619036" target="_blank" class="project-title">
-                                            Virtual Keyboard Based Activation and Dismissal</br>US Patent: US8619036B2, Dec 31 2013
-                                            <!-- Gesture-Based Virtual Keyboard (US Patent: US8619036B2)</br>Dec 31 2013 -->
-                                        </a>
+                                        <a href="#" class="project-title">Hand Tracking Sign Language App</a>
                                         <span class="external-link">↗</span>
                                     </h4>
                                     <p class="project-description">
-                                        A gesture-based virtual keyboard that adapts to natural hand placement, positioning keys beneath the user’s fingertips for faster, more intuitive input.
-                                        <!-- Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips -->
+                                        XR application teaching baby sign language through hand-tracked interactions. Built with Unity, OpenXR, and Meta Quest 3, combining foundational gesture detection expertise with accessible education technology.
                                     </p>
-                                    ⭐ 146+ Citations • 📱 Apple, Google, Microsoft • 📅 12+ Years Active
+                                    <ul class="tech-list">
+                                        <li>Unity</li>
+                                        <li>OpenXR</li>
+                                        <li>Meta Quest 3</li>
+                                        <li>Hand Tracking</li>
+                                        <li>C#</li>
+                                    </ul>
                                 </div>
+                            </div> -->
 
+                            <div class="project-item">
+                                <!-- <div class="project-image">
+                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=AirType" alt="AirType 3D Spatial Keyboard">
+                                </div> -->
+                                <div class="project-image">
+                                    <div class="demo-gif-container">
+                                        <img src="../assets/AirType-demo.gif" alt="AirType 3D Spatial Keyboard" class="demo-gif" data-project="airtype">
+                                    </div>
+                                </div>
+                                <div class="project-details">
+                                    <h4>
+                                        <a href="https://github.com/timmytimmytimmytime/AirType" class="project-title">AirType - 3D Spatial Keyboard</a>
+                                        <span class="external-link">↗</span>
+                                    </h4>
+                                    <p class="project-description">
+                                        A prototype 3D keyboard that uses computer vision hand tracking to let you “type in the air.” Inspired by my earlier gesture-input patent.
+                                    </p>
+
+                                    
+                                        <!-- Computer vision hand tracking system enabling text input through mid-air finger gestures. No physical keyboard required - type by extending fingers in 3D space using natural hand positioning.
+                                    </p> -->
+                                    <ul class="tech-list">
+                                        <li>OpenCV</li>
+                                        <li>MediaPipe</li>
+                                        <li>Computer Vision</li>
+                                        <li>Python</li>
+                                        <li>Real-time Detection</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="project-item">
+                                <!-- <div class="project-image">
+                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=XR+App" alt="CountAR (Finger Counting)">
+                                </div> -->
+                                <div class="project-image">
+                                    <div class="demo-gif-container">
+                                        <img src="../assets/CountAR-demo.gif" alt="CountAR (Finger Counting)" class="demo-gif" data-project="countar">
+                                    </div>
+                                </div>
+                                <div class="project-details">
+                                    <h4>
+                                        <a href="#" class="project-title">CountAR (Finger Counting)</a>
+                                        <span class="external-link">↗</span>
+                                    </h4>
+                                    <p class="project-description">
+                                        A Unity prototype that recognizes how many fingers you’re holding up and updates the count in real time. Built for Meta Quest 3 with XR Hands; fast and responsive, designed as a stepping stone toward MR/AR gesture lessons.
+                                    </p>
+                                    <ul class="tech-list">
+                                        <li>Unity</li>
+                                        <li>XR Hands</li>
+                                        <li>Meta Quest 3</li>
+                                        <li>Hand Tracking</li>
+                                        <li>C#</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="project-item">
+                                <!-- <div class="project-image">
+                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=Face+Mapper" alt="Cartoon Face Expression Mapper">
+                                </div> -->
+                                <div class="project-image">
+                                    <div class="demo-gif-container">
+                                        <img src="../assets/FaceTrackAR-demo.gif" alt="Face Motion Caputre Demo" class="demo-gif" data-project="facemocap">
+                                    </div>
+                                </div>
+                                <div class="project-details">
+                                    <h4>
+                                        <a href="https://github.com/timmytimmytimmytime/FaceMoCap" class="project-title">FaceTrackAR - Cartoon Face Expression Mapper</a>
+                                        <span class="external-link">↗</span>
+                                    </h4>
+                                    <p class="project-description">
+                                        An OpenCV demo that reads facial expressions and maps them onto a cartoon avatar. Quick build, fun results.
+                                        <!-- Real-time facial expression mapping to animated cartoon characters using computer vision. MediaPipe face tracking with custom cartoon character support and landmark detection. -->
+                                    </p>
+                                    <ul class="tech-list">
+                                        <li>MediaPipe</li>
+                                        <li>OpenCV</li>
+                                        <li>Python</li>
+                                        <li>Computer Vision</li>
+                                        <li>Real-time Processing</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,11 +212,11 @@
                 <section id="projects" class="section">
                     <div class="section-content">
                         <div class="section-header">
-                            <h3>Projects</h3>
+                            <h3>Enterprise Work</h3>
                         </div>
                         
                         <div class="projects-list">
-                            
+
                             <div class="project-item">
                                 <div class="project-media">
                                     <div class="project-image">
@@ -170,163 +259,75 @@
                                 </div>
                             </div>
 
-                            
                             <div class="project-item">
-                                <div class="project-image">
-                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=XR+App" alt="Hand Tracking Sign Language App">
-                                </div>
-                                <div class="project-details">
-                                    <h4>
-                                        <a href="#" class="project-title">Hand Tracking Sign Language App</a>
-                                        <span class="external-link">↗</span>
-                                    </h4>
-                                    <p class="project-description">
-                                        XR application teaching baby sign language through hand-tracked interactions. Built with Unity, OpenXR, and Meta Quest 3, combining foundational gesture detection expertise with accessible education technology.
-                                    </p>
-                                    <ul class="tech-list">
-                                        <li>Unity</li>
-                                        <li>OpenXR</li>
-                                        <li>Meta Quest 3</li>
-                                        <li>Hand Tracking</li>
-                                        <li>C#</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="project-item">
-                                <!-- <div class="project-image">
-                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=AirType" alt="AirType 3D Spatial Keyboard">
-                                </div> -->
-                                <div class="project-image">
-                                    <div class="demo-gif-container">
-                                        <img src="../assets/AirType-demo.gif" alt="AirType 3D Spatial Keyboard" class="demo-gif" data-project="airtype">
+                                <div class="project-media">
+                                    <div class="project-image">
+                                        <img src="/assets/Microfoft_Surface_PixelSense2.JPG" alt="Microsoft Surface (PixelSense)">
                                     </div>
                                 </div>
+
                                 <div class="project-details">
                                     <h4>
-                                        <a href="https://github.com/timmytimmytimmytime/AirType" class="project-title">AirType - 3D Spatial Keyboard</a>
+                                        <a href="https://en.wikipedia.org/wiki/Microsoft_PixelSense" class="project-title">Microsoft Surface (PixelSense)</a>
                                         <span class="external-link">↗</span>
                                     </h4>
                                     <p class="project-description">
-                                        A prototype 3D keyboard that uses computer vision hand tracking to let you “type in the air.” Inspired by my earlier gesture-input patent.
+                                        Part of pioneering multi-touch interface development on Microsoft Surface (PixelSense). Built frameworks for IR sensor testing and multi-touch input, advancing the foundation of natural user interaction.
                                     </p>
-
-                                    
-                                        <!-- Computer vision hand tracking system enabling text input through mid-air finger gestures. No physical keyboard required - type by extending fingers in 3D space using natural hand positioning.
-                                    </p> -->
                                     <ul class="tech-list">
-                                        <li>OpenCV</li>
-                                        <li>MediaPipe</li>
-                                        <li>Computer Vision</li>
-                                        <li>Python</li>
-                                        <li>Real-time Detection</li>
+                                        <li class="tech-tag">C#</li>
+                                        <li class="tech-tag">.NET</li>
+                                        <li class="tech-tag">WPF</li>
+                                        <li class="tech-tag">Gesture Recognition</li>
+                                        <li class="tech-tag">IR Sensor Testing</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="project-item">
-                                <!-- <div class="project-image">
-                                    <img src="https://via.placeholder.com/200x112/0f172a/64b5f6?text=Face+Mapper" alt="Cartoon Face Expression Mapper">
-                                </div> -->
-                                <div class="project-image">
-                                    <div class="demo-gif-container">
-                                        <img src="../assets/FaceMoCap-demo.gif" alt="Face Motion Caputre Demo" class="demo-gif" data-project="facemocap">
-                                    </div>
-                                </div>
-                                <div class="project-details">
-                                    <h4>
-                                        <a href="https://github.com/timmytimmytimmytime/FaceMoCap" class="project-title">FaceTrackAR - Cartoon Face Expression Mapper</a>
-                                        <span class="external-link">↗</span>
-                                    </h4>
-                                    <p class="project-description">
-                                        An OpenCV demo that reads facial expressions and maps them onto a cartoon avatar. Quick build, fun results.
-                                        <!-- Real-time facial expression mapping to animated cartoon characters using computer vision. MediaPipe face tracking with custom cartoon character support and landmark detection. -->
-                                    </p>
-                                    <ul class="tech-list">
-                                        <li>MediaPipe</li>
-                                        <li>OpenCV</li>
-                                        <li>Python</li>
-                                        <li>Computer Vision</li>
-                                        <li>Real-time Processing</li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </section>
 
 
-                <!-- Experience Section -->
-                <section id="experience" class="section">
+                <!-- Patent Section -->
+                <section id="patent" class="section">
                     <div class="section-content">
                         <div class="section-header">
-                            <h3>Experience</h3>
+                            <h3>Patents</h3>
                         </div>
                         
-                        <div class="experience-list">
-                            <div class="experience-item">
-                                <div class="experience-header">
-                                    <div class="experience-period">02/2025 — Present</div>
-                                    <div class="experience-details">
-                                        <h4>Software Engineer, VR/AR <span class="company">· Independent</span></h4>
-                                        <p class="experience-description">
-                                            Architecting an XR application for interactive sign language learning, focusing on precise hand tracking and real-time feedback systems. Standardizing on OpenXR and Unity's XR Hands APIs in C# to enable cross-platform gesture detection.
-                                        </p>
-                                        <ul class="tech-list">
-                                            <li>Unity</li>
-                                            <li>OpenXR</li>
-                                            <li>Meta Quest 3</li>
-                                            <li>Hand Tracking</li>
-                                            <li>C#</li>
-                                        </ul>
-                                    </div>
+                        <div class="projects-list">
+                            <div class="project-item">
+                                <div style="max-height: 200px; width: 160px; cursor: pointer;" onclick="openModal('patent')" >
+                                    <iframe class="patent-iframe" src="/v2/patent2.html" height="200px" scrolling="no" style="pointer-events: none;">
+                                    </iframe>
                                 </div>
-                            </div>
 
-                            <div class="experience-item">
-                                <div class="experience-header">
-                                    <div class="experience-period">05/2013 — 01/2025</div>
-                                    <div class="experience-details">
-                                        <h4>Sr. Software Engineer, Mobile <span class="company">· Getty Images</span></h4>
-                                        <p class="experience-description">
-                                            Engineered major features of Contributor by Getty Images mobile app (React Native) achieving 1M+ downloads across iOS and Android, driving 4× user growth to 200K+ professional photographers while maintaining 4.7+ app store ratings.
-                                        </p>
-                                        <ul class="tech-list">
-                                            <li>React Native</li>
-                                            <li>Swift</li>
-                                            <li>SwiftUI</li>
-                                            <li>Objective-C</li>
-                                            <li>Android Java</li>
-                                        </ul>
-                                    </div>
+                                <!-- <div style="max-height: 200px; width: 160px; cursor: pointer;" onclick="openModal('patent')">
+                                    <iframe class="patent-iframe" src="/v2/patent2.html" height="200px" scrolling="no" style="pointer-events: none;">
+                                    </iframe>
+                                </div> -->
+                                <div class="project-details">
+                                    <h4>
+                                        <a href="https://patents.google.com/patent/US8619036" target="_blank" class="project-title">
+                                            Virtual Keyboard Based Activation and Dismissal</br>US Patent: US8619036B2, Dec 31 2013
+                                            <!-- Gesture-Based Virtual Keyboard (US Patent: US8619036B2)</br>Dec 31 2013 -->
+                                        </a>
+                                        <span class="external-link">↗</span>
+                                    </h4>
+                                    <p class="project-description">
+                                        A gesture-based virtual keyboard that adapts to natural hand placement, positioning keys beneath the user’s fingertips for faster, more intuitive input.
+                                        <!-- Intuitive virtual keyboard layout technology that adapts position and orientation based on natural hand placement, positioning the home row directly beneath the user's fingertips -->
+                                    </p>
+                                    ⭐ 146+ Citations • 📱 Apple, Google, Microsoft • 📅 12+ Years Active
                                 </div>
-                            </div>
 
-                            <div class="experience-item">
-                                <div class="experience-header">
-                                    <div class="experience-period">10/2005 — 08/2010</div>
-                                    <div class="experience-details">
-                                        <h4>Software Development Engineer/T <span class="company">· Microsoft Surface</span></h4>
-                                        <p class="experience-description">
-                                            Invented widely-cited patent "Virtual keyboard based activation and dismissal" for gesture-based interfaces. Developed mock-data injection testing framework, evolving from IR input recording/playback to procedural multi-touch gesture generation.
-                                        </p>
-                                        <ul class="tech-list">
-                                            <li>C#</li>
-                                            <li>Microsoft Surface SDK</li>
-                                            <li>Multi-touch</li>
-                                            <li>Gesture Recognition</li>
-                                            <li>Testing Frameworks</li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="resume-link">
-                            <a href="#" class="resume-button">Download Full Résumé</a>
                         </div>
                     </div>
                 </section>
+
             </main>
         </div>
     </div>
