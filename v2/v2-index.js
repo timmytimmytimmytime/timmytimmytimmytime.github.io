@@ -125,17 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeObserver.observe(element);
   });
 
-  // Add subtle parallax effect to the left panel
-  const leftPanel = document.querySelector(".left-panel");
-
-  if (window.innerWidth > 1024) {
-    window.addEventListener("scroll", function () {
-      const scrolled = window.pageYOffset;
-      const parallax = scrolled * 0.1;
-      leftPanel.style.transform = `translateY(${parallax}px)`;
-    });
-  }
-
   // Enhanced link hover effects
   const projectLinks = document.querySelectorAll(".project-title");
   const resumeButton = document.querySelector(".resume-button");
@@ -254,6 +243,46 @@ document.addEventListener("DOMContentLoaded", function () {
     img.style.opacity = "0";
     img.style.transition = "opacity 0.3s ease";
   });
+
+  document.querySelectorAll(".demo-gif").forEach((gif) => {
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+  });
+
+  // Static GIF control - put in project-items.js
+  const demoGifs = document.querySelectorAll(".demo-gif");
+
+  demoGifs.forEach((gif) => {
+    const gifSrc = gif.src;
+    const staticSrc = originalSrc.replace(".gif", "-static.jpg");
+
+    // const staticSrc = gif.getAttribute("src");
+    // const gifSrc = gif.getAttribute("data-gif");
+
+    // Start with static image
+    gif.src = staticSrc;
+
+    // Get parent card
+    const card = gif.closest(".project-item");
+
+    // Play GIF on card hover
+    card.addEventListener("mouseenter", function () {
+      gif.src = gifSrc;
+    });
+
+    // Stop GIF on card leave
+    card.addEventListener("mouseleave", function () {
+      gif.src = staticSrc;
+    });
+
+    // Click handler for modal
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+  });
 });
 
 function openModal(projectType = "airtype") {
@@ -313,45 +342,3 @@ window.onclick = function (event) {
     }
   });
 };
-
-// Add event listeners for demo GIFs
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".demo-gif").forEach((gif) => {
-    gif.addEventListener("click", function () {
-      const projectType = this.getAttribute("data-project");
-      openModal(projectType);
-    });
-  });
-});
-
-// Static GIF control - put in project-items.js
-document.addEventListener("DOMContentLoaded", function () {
-  const demoGifs = document.querySelectorAll(".demo-gif");
-
-  demoGifs.forEach((gif) => {
-    const originalSrc = gif.src;
-    const staticSrc = originalSrc.replace(".gif", "-static.jpg");
-
-    // Start with static image
-    gif.src = staticSrc;
-
-    // Get parent card
-    const card = gif.closest(".project-item");
-
-    // Play GIF on card hover
-    card.addEventListener("mouseenter", function () {
-      gif.src = originalSrc;
-    });
-
-    // Stop GIF on card leave
-    card.addEventListener("mouseleave", function () {
-      gif.src = staticSrc;
-    });
-
-    // Click handler for modal
-    gif.addEventListener("click", function () {
-      const projectType = this.getAttribute("data-project");
-      openModal(projectType);
-    });
-  });
-});
