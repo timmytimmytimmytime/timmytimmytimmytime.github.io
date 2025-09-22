@@ -1,7 +1,51 @@
+debugger;
+console.log("BOOT: v2-index.js running");
+
+alert("JS file is running!");
+console.log("JS file is running!");
+
 // Navigation functionality
 document.addEventListener("DOMContentLoaded", function () {
+  console.log(`testing 123`);
+
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll(".section");
+
+  // Static GIF control - put in project-items.js
+  const demoGifs = document.querySelectorAll(".demo-gif");
+
+  demoGifs.forEach((gif) => {
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+
+    const gifSrc = gif.src;
+    const staticSrc = originalSrc.replace(".gif", "-static.jpg");
+    console.log(`testing 123`);
+
+    // Start with static image
+    gif.src = staticSrc;
+
+    // Get parent card
+    const card = gif.closest(".project-item");
+
+    // Play GIF on card hover
+    card.addEventListener("mouseenter", function () {
+      gif.src = gifSrc;
+    });
+
+    // Stop GIF on card leave
+    card.addEventListener("mouseleave", function () {
+      gif.src = staticSrc;
+    });
+
+    // Click handler for modal
+    gif.addEventListener("click", function () {
+      const projectType = this.getAttribute("data-project");
+      openModal(projectType);
+    });
+  });
 
   // Handle navigation click events
   navLinks.forEach((link) => {
@@ -164,24 +208,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Typing animation for the tagline (optional enhancement)
-  const tagline = document.querySelector(".tagline");
-  const originalText = tagline.textContent;
+  // // Typing animation for the tagline (optional enhancement)
+  // const tagline = document.querySelector(".tagline");
+  // const originalText = tagline.textContent;
 
-  function typeWriter() {
-    tagline.textContent = "";
-    let i = 0;
+  // function typeWriter() {
+  //   tagline.textContent = "";
+  //   let i = 0;
 
-    function type() {
-      if (i < originalText.length) {
-        tagline.textContent += originalText.charAt(i);
-        i++;
-        setTimeout(type, 50);
-      }
-    }
+  //   function type() {
+  //     if (i < originalText.length) {
+  //       tagline.textContent += originalText.charAt(i);
+  //       i++;
+  //       setTimeout(type, 50);
+  //     }
+  //   }
 
-    setTimeout(type, 1000); // Start typing after 1 second
-  }
+  //   setTimeout(type, 1000); // Start typing after 1 second
+  // }
 
   // Uncomment the line below to enable typing animation
   // typeWriter();
@@ -243,63 +287,24 @@ document.addEventListener("DOMContentLoaded", function () {
     img.style.opacity = "0";
     img.style.transition = "opacity 0.3s ease";
   });
-
-  document.querySelectorAll(".demo-gif").forEach((gif) => {
-    gif.addEventListener("click", function () {
-      const projectType = this.getAttribute("data-project");
-      openModal(projectType);
-    });
-  });
-
-  // Static GIF control - put in project-items.js
-  const demoGifs = document.querySelectorAll(".demo-gif");
-
-  demoGifs.forEach((gif) => {
-    const gifSrc = gif.src;
-    const staticSrc = originalSrc.replace(".gif", "-static.jpg");
-
-    // const staticSrc = gif.getAttribute("src");
-    // const gifSrc = gif.getAttribute("data-gif");
-
-    // Start with static image
-    gif.src = staticSrc;
-
-    // Get parent card
-    const card = gif.closest(".project-item");
-
-    // Play GIF on card hover
-    card.addEventListener("mouseenter", function () {
-      gif.src = gifSrc;
-    });
-
-    // Stop GIF on card leave
-    card.addEventListener("mouseleave", function () {
-      gif.src = staticSrc;
-    });
-
-    // Click handler for modal
-    gif.addEventListener("click", function () {
-      const projectType = this.getAttribute("data-project");
-      openModal(projectType);
-    });
-  });
 });
 
 function openModal(projectType = "airtype") {
   currentProject = projectType;
   var modal = null;
-  if (projectType == "signlang") {
-    modal = document.getElementById("demoVidModal");
-    const video = modal.querySelector("video");
-    video.src = "assets/sign-language-alphebet.MP4";
-    video.alt = "Sign Language Experiment Demo";
+  // if (projectType == "signlang") {
+  //   modal = document.getElementById("demoVidModal");
+  //   const video = modal.querySelector("video");
+  //   video.src = "assets/sign-language-alphebet.MP4";
+  //   video.alt = "Sign Language Experiment Demo";
 
-    video.addEventListener("loadeddata", function () {
-      video.playbackRate = 1.5;
-    });
+  //   video.addEventListener("loadeddata", function () {
+  //     video.playbackRate = 1.5;
+  //   });
 
-    video.play();
-  } else if (projectType == "patent") {
+  //   video.play();
+  // } else
+  if (projectType == "patent") {
     // modal = document.getElementById("patentModal");
     console.log("Opening patent modal");
     modal = document.getElementById("patentModal");
