@@ -1,0 +1,12 @@
+.rightPanel {
+  /* flex: 3; */
+  /* padding: 2rem; */
+  /* padding: 8rem; */
+  width: 100%;
+}
+
+.cardsGrid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

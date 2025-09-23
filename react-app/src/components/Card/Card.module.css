@@ -1,0 +1,26 @@
+.card {
+  background: var(--color-bg-panel);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 220px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cardImage {
+  height: 120px;
+  background: var(--color-border);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContent h3 {
+  margin-bottom: 0.5rem;
+}
