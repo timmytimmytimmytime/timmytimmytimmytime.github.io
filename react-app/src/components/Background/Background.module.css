@@ -1,0 +1,14 @@
+/* src/components/Background/Background.module.css */
+.bgEffect {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  /* initial paint (same as seeded state in JS) */
+  background: radial-gradient(
+    600px circle at 50% 50%,
+    color-mix(in srgb, var(--color-accent) 6%, transparent),
+    transparent 65%
+  );
+  transition: background 120ms linear;
+}

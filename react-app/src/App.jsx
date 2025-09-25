@@ -1,15 +1,20 @@
 import "./index.css";
 import "./palettes.css";
+import styles from "./layout.module.css";
+import Background  from "./components/Background/Background";
 
 import LeftPanel from "./components/LeftPanel/LeftPanel";
 import RightPanel from "./components/RightPanel/RightPanel";
 
 function App() {
   return (
-    <div style={{ display: "flex", minHeight: "100vh", maxWidth: "1400px" }}>
-      <LeftPanel />
-      <RightPanel />
-    </div>
+    <>
+      <Background />
+      <div className={styles.container}>
+        <LeftPanel />
+        <RightPanel />
+      </div>
+    </>
   );
 }
 

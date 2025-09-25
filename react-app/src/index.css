@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: auto;
+  /* outline: auto; */
 }
 
 body {
@@ -20,5 +20,31 @@ h2 {
   font-weight: 400;
   color: var(--color-text);
   margin-bottom: 1rem;
-  text-align: center;
+}
+
+section {
+  padding-top: 110px;
+  /* margin-bottom: 140px; */
+}
+
+.section-description {
+  font-size: 1rem;
+  font-weight: 300;
+  padding-top: 1rem;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+/* About Section */
+.section-description p {
+    margin-bottom: 16px;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }

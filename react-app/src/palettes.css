@@ -24,7 +24,7 @@
 }
 
 .palette-v2-legacy {
-  --color-bg: #02102f;          /* body background */
+  --color-bg: #02102f; /* body background */
   --color-bg-panel: #1e293b;    /* panels, cards, resume button */
   --color-text: #e2e8f0;        /* headings, primary text */
   --color-text-muted: #64748b;  /* default body text */
@@ -79,11 +79,13 @@
 
 /* Monochrome Accent */
 .palette-monochrome-accent {
-  --color-bg: #000000;       /* Jet black */
-  --color-bg-panel: #1a1a1a; /* Graphite */
-  --color-text: #f5f5f5;     /* Pure white */
-  --color-text-muted: #a3a3a3;/* Silver */
+  --color-bg: #000000;
+  --color-bg-panel: #1a1a1a;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a3a3a3;
   --color-border: #333333;
-  --color-accent: #ff0033;   /* Signal red */
-  --color-accent-hover: #ff3355;
+
+  /* ↑ visibility on dark: use a brighter coral-red */
+  --color-accent: #ff3355;        /* was #ff0033 */
+  --color-accent-hover: #ff5577;  /* slightly lighter for hover */
 }
