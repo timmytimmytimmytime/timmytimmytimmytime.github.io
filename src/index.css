@@ -29,8 +29,8 @@ section {
 .section-description {
   font-size: 1rem;
   font-weight: 300;
-  padding-top: 1rem;
   display: inline-block;
+  padding-top: 1rem;
   padding-bottom: 0.25rem;
   color: var(--color-text);
 }
@@ -52,5 +52,10 @@ section {
 @media (max-width: 1024px) {
   section {
     padding-top: 0.5rem;
+  }
+
+  .section-description, h2, hr {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
