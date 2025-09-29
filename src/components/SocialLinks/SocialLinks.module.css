@@ -1,0 +1,50 @@
+.socialLinks {
+  display: flex;
+  flex-direction: row;  /* horizontal */
+  gap: 2rem;
+  align-items: center;
+}
+
+/* link + label */
+.socialLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);                   /* default: white */
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  transition: color .2s ease;
+  margin-bottom: 1rem;
+}
+
+.socialLinks a svg {
+  fill: currentColor;             /* icons follow text color */
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  transition: fill .2s ease;
+}
+
+/* hover => accent for both icon + text */
+.socialLinks a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 1380px) and (min-width: 1025px) {
+  .socialLinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem; /* row gap | column gap */
+    justify-items: start;
+  }
+}
+
+@media (max-width: 500px) {
+  .socialLinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* always 2 per row */
+    gap: 1rem 2rem; /* row gap | column gap */
+    justify-items: start; /* align links left in each cell */
+  }
+}

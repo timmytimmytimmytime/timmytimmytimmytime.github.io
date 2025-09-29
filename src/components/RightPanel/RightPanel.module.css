@@ -1,0 +1,16 @@
+.rightPanel {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 0 96px 64px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contentCol {
+  width: 100%;
+  max-width: 56rem;
+}
+
+@media (max-width: 1024px) {
+  .rightPanel { padding: 24px 0; }
+}
