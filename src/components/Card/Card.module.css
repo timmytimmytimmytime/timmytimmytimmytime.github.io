@@ -141,21 +141,10 @@
 
 /* Touch devices (no hover, coarse pointer) */
 @media (hover: none) and (pointer: coarse) {
-  .card:focus { 
+  .card { 
     background: rgba(255,255,255,0.04); 
     border-color: rgba(148,163,184,0.12); 
     backdrop-filter: blur(6px); 
-  }
-
-  .card:focus .title { 
-    color: var(--color-accent);
-  }
-
-  .card:focus .mediaAnimated { opacity: 1; }
-  .card:focus .mediaStatic   { opacity: 0; }
-
-  .cards:has(.card:focus) > .card:not(:focus) {
-    opacity: .5;
   }
 }
 
