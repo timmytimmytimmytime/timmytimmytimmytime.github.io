@@ -7,4 +7,4 @@ It highlights my work in **mobile development, AR/VR prototyping, and computer v
 
 <br/>
 
-### [Download resume](https://timmytimmytimmytime.github.io/assets/TimothyMosby2025Resume.pdf)
+#### <a href="https://timmytimmytimmytime.github.io/assets/TimothyMosby2025Resume.pdf" target="_blank">Download resume</a>
