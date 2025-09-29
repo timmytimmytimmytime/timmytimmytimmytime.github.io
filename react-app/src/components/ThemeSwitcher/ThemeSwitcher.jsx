@@ -2,12 +2,12 @@ import { useState } from "react";
 
 const palettes = [
   { key: "", label: "Default" },
+  { key: "palette-v2-legacy", label: "Legacy" },
   { key: "britney-chiang", label: "She's a Cool Operator" },
-  { key: "palette-v2-legacy", label: "v2 Legacy" },
-  { key: "palette-futuristic-minimal", label: "Futuristic Minimal" },
-  { key: "palette-midnight-code", label: "Midnight Code" },
-  { key: "palette-sunset-terminal", label: "Sunset Terminal" },
-  { key: "palette-oceanic-grid", label: "Oceanic Grid" },
+  { key: "papyrus", label: "Papyrus" },
+  { key: "high-contrast", label: "High Contrast" },
+  { key: "cyberpunk", label: "CyberPunk" },
+  { key: "neon-tokyo", label: "Neon Tokyo" },
   { key: "palette-monochrome-accent", label: "Monochrome Accent" },
 ];
 

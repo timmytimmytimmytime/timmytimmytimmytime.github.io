@@ -13,6 +13,16 @@
   --color-accent-hover: #90cdf4;
 }
 
+.palette-v2-legacy {
+  --color-bg: #02102f; /* body background */
+  --color-bg-panel: #1e293b;    /* panels, cards, resume button */
+  --color-text: #e2e8f0;        /* headings, primary text */
+  --color-text-muted: #64748b;  /* default body text */
+  --color-border: #334155;      /* borders */
+  --color-accent: #64b5f6;      /* links, accents */
+  --color-accent-hover: #f1f4cc;/* hover accent */
+}
+
 .britney-chiang {
   --color-bg: #0a192f;          /* body background */
   --color-bg-panel: #112240;    /* panels, cards, resume button */
@@ -23,48 +33,6 @@
   --color-accent-hover: #ccd6f6;/* hover accent */
 }
 
-.palette-v2-legacy {
-  --color-bg: #02102f; /* body background */
-  --color-bg-panel: #1e293b;    /* panels, cards, resume button */
-  --color-text: #e2e8f0;        /* headings, primary text */
-  --color-text-muted: #64748b;  /* default body text */
-  --color-border: #334155;      /* borders */
-  --color-accent: #64b5f6;      /* links, accents */
-  --color-accent-hover: #ccd9f4;/* hover accent */
-}
-
-/* Futuristic Minimal */
-.palette-futuristic-minimal {
-  --color-bg: #0a0a0a;        /* Onyx */
-  --color-bg-panel: #1a1a1a;  /* Deep steel */
-  --color-text: #f5f5f5;      /* Cloud white */
-  --color-text-muted: #a1a1aa;/* Gray-400 */
-  --color-border: #2a2a2a;
-  --color-accent: #39ff14;    /* Neon green */
-  --color-accent-hover: #5eff4e;
-}
-
-/* Midnight Code */
-.palette-midnight-code {
-  --color-bg: #0b0c10;       /* Charcoal */
-  --color-bg-panel: #1f2833; /* Slate */
-  --color-text: #c5c6c7;     /* Soft white */
-  --color-text-muted: #66fcf1;/* Aqua */
-  --color-border: #45a29e;   /* Electric Blue */
-  --color-accent: #66fcf1;
-  --color-accent-hover: #98ffff;
-}
-
-/* Sunset Terminal */
-.palette-sunset-terminal {
-  --color-bg: #1b0a0a;       /* Deep plum */
-  --color-bg-panel: #331a1a; /* Burnt red-black */
-  --color-text: #fefae0;     /* Warm sand */
-  --color-text-muted: #e9c46a;
-  --color-border: #e76f51;   /* Burnt orange */
-  --color-accent: #f4a261;
-  --color-accent-hover: #f6bd60;
-}
 
 /* Oceanic Grid */
 .palette-oceanic-grid {
@@ -88,4 +56,44 @@
   /* ↑ visibility on dark: use a brighter coral-red */
   --color-accent: #ff3355;        /* was #ff0033 */
   --color-accent-hover: #ff5577;  /* slightly lighter for hover */
+}
+
+.cyberpunk {
+  --color-bg: #05000a;          /* black with a faint purple core */
+  --color-bg-panel: #120026;    /* glowing violet panel */
+  --color-text: #f2f2f2;        /* bright neutral white */
+  --color-text-muted: #ff66c4;  /* neon pink-muted text */
+  --color-border: #39ff14;      /* violet border glow */
+  --color-accent: #ff00ff;      /* electric cyan */
+  --color-accent-hover: #00ffff;/* hot magenta hover */
+}
+
+.neon-tokyo {
+  --color-bg: #0d001a;          /* inky violet-black */
+  --color-bg-panel: #1a0033;    /* deep purple panel */
+  --color-text: #ffe6ff;        /* pale pink text */
+  --color-text-muted: #b366cc;  /* muted orchid */
+  --color-border: #660099;      /* neon purple border */
+  --color-accent: #ff00ff;      /* hot magenta */
+  --color-accent-hover: #ff66ff;/* glowing pink */
+}
+
+.papyrus {
+  --color-bg: #fdf6e3;          /* parchment background */
+  --color-bg-panel: #f5e6c8;    /* aged paper panel */
+  --color-text: #3b2f2f;        /* sepia ink */
+  --color-text-muted: #7b5e57;  /* faded brown */
+  --color-border: #d1bfa3;      /* warm paper edge */
+  --color-accent: #2e8b57;      /* muted emerald */
+  --color-accent-hover: #4682b4;/* lapis blue */
+}
+
+.high-contrast {
+  --color-bg: #ffffff;          /* pure white */
+  --color-bg-panel: #f9fafb;    /* pale gray panel */
+  --color-text: #000000;        /* solid black */
+  --color-text-muted: #374151;  /* dark charcoal */
+  --color-border: #000000;      /* strong black border */
+  --color-accent: #ff0000;      /* vivid red */
+  --color-accent-hover: #2563eb;/* bright blue */
 }

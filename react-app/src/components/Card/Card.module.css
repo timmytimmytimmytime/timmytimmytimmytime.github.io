@@ -1,22 +1,29 @@
-/* wide stacked cards */
-.cards { display: flex; flex-direction: column; gap: 1.5rem; }
+.cards { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2rem; 
+}
 
 .card {
   width: 100%;
+  max-width: 64rem;
   display: grid;
-  grid-template-columns: 220px 1fr; /* left media | right content */
+  grid-template-columns: minmax(260px, 320px) 1fr;
   gap: 2rem;
   align-items: start;
 
-  border-radius: .375rem;           /* 6px */
+  border-radius: .375rem;
   padding: 1.5rem;
 
   background: transparent;
   border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
   transition: background 200ms ease, border-color 200ms ease, opacity 200ms ease;
+  border-color: rgba(148,163,184,0.12); 
+
 }
 
-/* LEFT — media grows naturally (no fixed height/aspect) */
 .left { 
   display: flex; 
   flex-direction: column; 
@@ -30,15 +37,13 @@
   flex: 1;
   width: 100%; 
   border-radius: .25rem; 
-  background: #0b0f1a; 
   overflow: hidden; 
-  margin: 0;            /* kill any top margin */
-  line-height: 1.15;    /* reduce top leading that makes text look lower */
-  transform: translateY(6px); /* tweak to -5px/-7px if your font differs */
-  position: relative;   /* for GIF overlay */
+  margin: 0;            
+  line-height: 1.15;    
+  transform: translateY(6px); 
+  position: relative;   
 }
 
-/* CSS-only hover swap: static preview -> animated GIF */
 .mediaStatic {
   opacity: 1;
   transition: opacity 180ms ease;
@@ -53,13 +58,19 @@
 .card:hover .mediaAnimated { opacity: 1; }
 .card:hover .mediaStatic   { opacity: 0; }
 
-.media img, .media video, .media canvas {
+.media > img, .media video, .media canvas {
   display: block; 
   width: 100%; 
   height: auto; 
 }
 
-/* RIGHT — natural grow/shrink */
+.storeButtons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 .right { 
   display: grid; 
   grid-template-rows: auto auto auto; 
@@ -69,21 +80,60 @@
   min-width: 0; 
 }
 
-.title { font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin: 0; transition: color 180ms ease; }
+.title { 
+  font-size: 1.125rem; 
+  font-weight: 400; 
+  color: var(--color-text); 
+  margin: 0; 
+  transition: color 180ms ease; 
+}
+
 .description {
   color: var(--color-text-muted); 
-  font-size: .875rem;
-  font-weight: 100;
+  font-size: .95rem;
+  font-weight: 400;
   line-height: 1.6; 
   margin: 0; 
 }
-.tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: .5rem 0 0; padding: 0; }
-.tags li { color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 12%, transparent); padding: .25rem .75rem; border-radius: 999px; font-size: .75rem; font-weight: 500; }
+
+.meta {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.tags {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .5rem; 
+  list-style: none; 
+  margin: .5rem 0 0; 
+  padding: 0; 
+}
+
+.tags li { 
+  color: var(--color-accent); 
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent); 
+  padding: .25rem .75rem; border-radius: 999px; 
+  font-size: .75rem; 
+  font-weight: 500; 
+}
 
 /* Hover frost + outline; siblings fade */
-.card:hover { background: rgba(255,255,255,0.04); border-color: rgba(148,163,184,0.12); backdrop-filter: blur(6px); }
-.card:hover .title { color: var(--color-accent); }
-.cards:hover > .card:not(:hover) { opacity: .5; }
+.card:hover { 
+  background: rgba(255,255,255,0.04); 
+  border-color: rgba(148,163,184,0.12); 
+  backdrop-filter: blur(6px); 
+}
+
+.card:hover .title { 
+  color: var(--color-accent);
+}
+
+
+.cards:has(.card:hover) > .card:not(:hover) {
+  opacity: .5;
+}
 
 /* Mobile: stack left/right */
 @media (max-width: 768px) {

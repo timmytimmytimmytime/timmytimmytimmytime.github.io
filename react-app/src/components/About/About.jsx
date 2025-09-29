@@ -8,7 +8,7 @@ function About() {
 
         <p>From Microsoft Surface IR frameworks to Getty’s Contributor app, I specialize in bridging digital and physical interactions. Recent prototypes — AirType, CountAR, and FaceTrackAR — apply XR Hands and computer vision to advance more natural and intuitive interaction models.</p>
 
-        <p>Outside of work, I recharge through creative and social hobbies — from board games to painting minis.</p>
+        <p>Outside of work, I recharge through social and creative hobbies — from board games to painting minis.</p>
       </div>
 
     </div>

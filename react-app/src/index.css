@@ -23,8 +23,7 @@ h2 {
 }
 
 section {
-  padding-top: 110px;
-  /* margin-bottom: 140px; */
+  padding-top: 6.5rem;
 }
 
 .section-description {
@@ -47,4 +46,11 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  section {
+    padding-top: 0.5rem;
+  }
 }

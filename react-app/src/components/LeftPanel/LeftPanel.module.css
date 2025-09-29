@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 96px 0;
+  padding-top: 96px;
+  padding-left: clamp(1rem, 2vw, 3rem);
+  padding-right: clamp(1rem, 2vw, 3rem);
 }
 
 .name {
@@ -35,68 +37,11 @@
   min-width: 0;
 }
 
-.nav {
+.panelFooter {
+  margin-top: auto;           /* push this block to the bottom */
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.navLink {
-  display: flex;
-  align-items: center;
-  color: var(--color-text-muted);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.navIndicator {
-  width: 32px;
-  height: 1px;
-  background-color: var(--color-text-muted);
-  margin-right: 16px;
-  transition: all 0.3s ease;
-}
-
-.navLink:hover,
-.navLinkActive {
-  color: var(--color-text);
-}
-.navLink:hover .navIndicator,
-.navLinkActive .navIndicator {
-  width: 64px;
-  background-color: var(--color-text);
-}
-
-.resumeCta { margin-top: 40px; }
-
-.resumeButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--color-bg-panel);
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 12px 24px;
-  border-radius: 6px;
-  border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
-}
-.resumeButton:hover {
-  background-color: #334155;
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  transform: translateY(-1px);
-}
-.resumeButton::after {
-  content: '↓';
-  font-size: 0.875rem;
+  flex-direction: column;     /* keep social above theme */
+  gap: 1rem;
 }
 
 .socialLinks {
@@ -122,15 +67,13 @@
     width: 100%;
     padding: 24px 0;
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
     align-items: center;
   }
   .role { text-align: center; }
   .name { text-align: center; }
-  .tagline { max-width: none; text-align: center; }
-
-  .navSocial {
-    display: none;
+  .tagline { 
+    max-width: none; 
+    text-align: center;  
+    max-width: 350px; 
   }
-  /* .nav { flex-direction: row; flex-wrap: wrap; gap: 32px; justify-content: center; } */
 }

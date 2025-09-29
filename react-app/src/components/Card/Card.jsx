@@ -18,57 +18,73 @@ function normalizeSrc(src) {
 export default function Card({ 
   title, 
   description, 
+  meta,
   tags = [], 
   mediaStaticSrc,
   mediaAnimatedSrc,
-  mediaAlt 
+  mediaAlt,
+  storeButtons,
+  href
 }) {
   const resolvedMediaStaticSrc = normalizeSrc(mediaStaticSrc);
   const resolvedMediaAnimatedSrc = normalizeSrc(mediaAnimatedSrc);
   
+  const cardContent = (
+    <>
+      <div className={styles.left}>
+        <div className={styles.media}>
 
-  return (
-    <div className={styles.card}>
-      {/* <a href=""> */}
-        <div className={styles.left}>
-          <div className={styles.media}>
+          {/* Base/static image */}
+          {resolvedMediaStaticSrc && (
+            <img
+              className={styles.mediaStatic}
+              src={resolvedMediaStaticSrc}
+              alt={mediaAlt || title}
+              decoding="async"
+              loading="eager"
+            />
+          )}
 
-            {/* Base/static image */}
-            {resolvedMediaStaticSrc && (
-              <img
-                className={styles.mediaStatic}
-                src={resolvedMediaStaticSrc}
-                alt={mediaAlt || title}
-                decoding="async"
-                loading="eager"
-              />
-            )}
-
-            {/* Animated GIF overlay (kept loaded; fades in on hover) */}
-            {resolvedMediaAnimatedSrc && (
-              <img
-                className={styles.mediaAnimated}
-                src={resolvedMediaAnimatedSrc}
-                alt={mediaAlt || title}
-                aria-hidden="true"
-                decoding="async"
-                loading="lazy"
-              />
-            )}
-            
-          </div>
-        </div>
-
-        <div className={styles.right}>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
-          {tags.length > 0 && (
-            <ul className={styles.tags}>
-              {tags.map((t, i) => <li key={i}>{t}</li>)}
-            </ul>
+          {/* Animated GIF overlay (kept loaded; fades in on hover) */}
+          {resolvedMediaAnimatedSrc && (
+            <img
+              className={styles.mediaAnimated}
+              src={resolvedMediaAnimatedSrc}
+              alt={mediaAlt || title}
+              aria-hidden="true"
+              decoding="async"
+              loading="lazy"
+            />
+          )}
+          
+          {storeButtons && (
+            <div className={styles.storeButtons}>
+              {storeButtons}
+            </div>
           )}
         </div>
-      {/* </a> */}
-    </div>
+      </div>
+
+      <div className={styles.right}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
+
+        {meta && <p className={styles.meta}>{meta}</p>} {/* 👈 render meta here */}
+
+        {tags.length > 0 && (
+          <ul className={styles.tags}>
+            {tags.map((t, i) => <li key={i}>{t}</li>)}
+          </ul>
+        )}
+      </div>
+    </>
+  );
+
+    return href ? (
+    <a href={href} className={styles.card} target="_blank" rel="noreferrer">
+      {cardContent}
+    </a>
+  ) : (
+    <div className={styles.card}>{cardContent}</div>
   );
 }
