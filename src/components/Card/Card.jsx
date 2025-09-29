@@ -85,6 +85,6 @@ export default function Card({
       {cardContent}
     </a>
   ) : (
-    <div className={styles.card}>{cardContent}</div>
+    <div className={styles.card} tabIndex={0}>{cardContent}</div>
   );
 }

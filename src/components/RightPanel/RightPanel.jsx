@@ -9,7 +9,7 @@ function RightPanel() {
     <main className={styles.rightPanel}>
       <div className={styles.contentCol}>
 
-        <section id="summary" tabindex="0">
+        <section id="summary" tabindex={0}>
           <CardGroup title="Summary">
             <AboutSection />
           </CardGroup>
@@ -17,7 +17,7 @@ function RightPanel() {
 
         <section id="prototypes">
           <CardGroup title="Prototypes">
-            <div class="section-description" tabindex="0">
+            <div class="section-description" tabindex={0}>
               <p>
                 Exploring new interaction models through rapid prototyping in Unity with OpenXR and OpenCV — from hand-tracking keyboards to mixed-reality applications and open-source gesture libraries. These projects are my testbed for future-facing ideas: validating concepts, refining workflows, and pushing the boundaries of spatial computing. Beyond XR, I also experiment with AI, building tools like a Firefox plugin that fact-checks LLMs in real time to cut down on omissions and fabrications. Together, these prototypes reflect how I investigate emerging technologies and translate them into practical, user-centered possibilities.
               </p>
@@ -31,7 +31,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/CountAR-demo.gif"
               mediaAlt="CountAR - Finger Counting"
               href="https://github.com/timmytimmytimmytime/CountAR"
-              tabindex="0"
+              tabindex={0}
             />
             
             <Card
@@ -42,7 +42,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/AirType-demo.gif"
               mediaAlt="AirType 3D Spatial Keyboard"
               href="https://github.com/timmytimmytimmytime/AirType"
-              tabindex="0"
+              tabindex={0}
             />
 
                                         
@@ -54,7 +54,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/FaceTrackAR-demo.gif"
               mediaAlt="FaceTrackAR - Face Expression Mapper"
               href="https://github.com/timmytimmytimmytime/FaceTrackAR"
-              tabindex="0"
+              tabindex={0}
             />
 
           </CardGroup>          
@@ -62,7 +62,7 @@ function RightPanel() {
 
         <section id="products">
           <CardGroup title="Products">
-            <div class="section-description" tabindex="0">
+            <div class="section-description" tabindex={0}>
               <p>
                 Over two decades of delivering products used worldwide across consumer, enterprise, and creative industries.
               </p>
@@ -112,7 +112,7 @@ function RightPanel() {
                   />
                 </>
               }
-              tabindex="0"
+              tabindex={0}
             />
             
             <Card
@@ -123,7 +123,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/Microfoft_Surface_PixelSense2.JPG"
               mediaAlt="AirType 3D Spatial Keyboard"
               href="https://en.wikipedia.org/wiki/Microsoft_PixelSense"
-              tabindex="0"
+              tabindex={0}
             />
 
           </CardGroup>          
@@ -131,7 +131,7 @@ function RightPanel() {
 
         <section id="achievements">
           <CardGroup title="Achievements">
-            <div class="section-description" tabindex="0">
+            <div class="section-description" tabindex={0}>
               <p>Invented a Microsoft Surface patent for rendering virtual keyboards relative to hand position, a solution cited over 140 times by major companies. This recognition reflects my ability to solve novel interaction challenges and contribute ideas that shape industry standards.</p>
             </div> 
 
@@ -155,7 +155,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/PatentPlacard.jpg"
               mediaAlt="Patent Placard"
               href="https://patents.google.com/patent/US8619036"
-              tabindex="0"
+              tabindex={0}
             />
 
           </CardGroup>          
