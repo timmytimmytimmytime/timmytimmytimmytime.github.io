@@ -20,8 +20,6 @@
   text-decoration: none;
   color: inherit;
   transition: background 200ms ease, border-color 200ms ease, opacity 200ms ease;
-  border-color: rgba(148,163,184,0.12); 
-
 }
 
 .left { 
@@ -137,5 +135,9 @@
 
 /* Mobile: stack left/right */
 @media (max-width: 768px) {
-  .card { grid-template-columns: 1fr; gap: 1rem; }
+  .card { 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+    border-color: rgba(148,163,184,0.12); 
+  }
 }
