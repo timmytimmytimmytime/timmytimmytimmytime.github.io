@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./BreadCrumb.module.css";
 
-const sections = ["about", "experiments", "products", "patent"];
+const sections = ["summary", "prototypes", "products", "achievements"];
 
 function BreadCrumb() {
   const [activeId, setActiveId] = useState("about");

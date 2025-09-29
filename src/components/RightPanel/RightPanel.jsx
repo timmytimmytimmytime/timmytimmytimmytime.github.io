@@ -9,20 +9,17 @@ function RightPanel() {
     <main className={styles.rightPanel}>
       <div className={styles.contentCol}>
 
-        <section id="about">
-          <CardGroup title="About">
+        <section id="summary" tabindex="0">
+          <CardGroup title="Summary">
             <AboutSection />
           </CardGroup>
         </section>
 
-        <section id="experiments">
-          <CardGroup title="Experiments">
-            <div class="section-description">
+        <section id="prototypes">
+          <CardGroup title="Prototypes">
+            <div class="section-description" tabindex="0">
               <p>
-                Prototyping hand-tracking interactions, mixed reality applications, and
-                graphics workflows using Unity, OpenXR and OpenCV. These experiments are
-                where I push into new spatial computing ideas and test future-facing
-                interaction patterns.
+                Exploring new interaction models through rapid prototyping in Unity with OpenXR and OpenCV — from hand-tracking keyboards to mixed-reality applications and open-source gesture libraries. These projects are my testbed for future-facing ideas: validating concepts, refining workflows, and pushing the boundaries of spatial computing. Beyond XR, I also experiment with AI, building tools like a Firefox plugin that fact-checks LLMs in real time to cut down on omissions and fabrications. Together, these prototypes reflect how I investigate emerging technologies and translate them into practical, user-centered possibilities.
               </p>
             </div> 
 
@@ -34,6 +31,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/CountAR-demo.gif"
               mediaAlt="CountAR - Finger Counting"
               href="https://github.com/timmytimmytimmytime/CountAR"
+              tabindex="0"
             />
             
             <Card
@@ -44,6 +42,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/AirType-demo.gif"
               mediaAlt="AirType 3D Spatial Keyboard"
               href="https://github.com/timmytimmytimmytime/AirType"
+              tabindex="0"
             />
 
                                         
@@ -55,6 +54,7 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/FaceTrackAR-demo.gif"
               mediaAlt="FaceTrackAR - Face Expression Mapper"
               href="https://github.com/timmytimmytimmytime/FaceTrackAR"
+              tabindex="0"
             />
 
           </CardGroup>          
@@ -62,9 +62,33 @@ function RightPanel() {
 
         <section id="products">
           <CardGroup title="Products">
-            <div class="section-description">
+            <div class="section-description" tabindex="0">
               <p>
-                Over two decades of shipping enterprise-scale products across industries. At Getty Images, led cross-platform mobile development for the Contributor app and core website features. Earlier: Surface PixelSense, IE & Exchange, plus IBM NUMA and Intel WBEM—experience. Roles have included feature delivery, infrastructure ownership, ML integrations, and mentoring within agile teams. 
+                Over two decades of delivering products used worldwide across consumer, enterprise, and creative industries.
+              </p>
+
+              <p>
+                <strong>Getty Images</strong> — led cross-platform development of the Contributor app, enabling photographers globally to upload, manage, and monetize their work; supported core website features and e-commerce integrations.
+              </p>
+
+              <p>
+                <strong>Microsoft Surface PixelSense</strong> — built natural user interface software for multi-touch and gesture-based experiences.
+              </p>
+
+              <p>
+                <strong>Microsoft Internet Explorer & Exchange Server</strong> — engineered internationalization tools for Internet Explorer and shipped mail/messaging services in Exchange serving hundreds of millions of users.
+              </p>
+
+              <p>
+                <strong>IBM NUMA</strong> — contributed to next-generation enterprise scalability.
+              </p>
+
+              <p>
+                <strong>Intel WBEM</strong> — advanced systems management and interoperability standards.
+              </p>
+
+              <p>
+                Along the way I’ve driven feature delivery, owned infrastructure, integrated machine learning into production workflows, and mentored engineers within agile teams.
               </p>
             </div> 
 
@@ -88,6 +112,7 @@ function RightPanel() {
                   />
                 </>
               }
+              tabindex="0"
             />
             
             <Card
@@ -98,21 +123,19 @@ function RightPanel() {
               mediaAnimatedSrc="/assets/Microfoft_Surface_PixelSense2.JPG"
               mediaAlt="AirType 3D Spatial Keyboard"
               href="https://en.wikipedia.org/wiki/Microsoft_PixelSense"
+              tabindex="0"
             />
 
           </CardGroup>          
         </section>
 
-        <section id="patent">
-          <CardGroup title="Patent">
-            <div class="section-description">
-              <p>
-                While working on Microsoft Surface, invented a patent enabling virtual keyboard rendering relative to a user’s hand position—illustrating the kind of creative problem-solving that I bring to the table.
-              </p>
+        <section id="achievements">
+          <CardGroup title="Achievements">
+            <div class="section-description" tabindex="0">
+              <p>Invented a Microsoft Surface patent for rendering virtual keyboards relative to hand position, a solution cited over 140 times by major companies. This recognition reflects my ability to solve novel interaction challenges and contribute ideas that shape industry standards.</p>
             </div> 
 
             <Card
-              // title="Virtual Keyboard Based Activation and Dismissal</br>US Patent: US8619036B2, Dec 31 2013"
               title={<>
                         Virtual Keyboard Based Activation and Dismissal
                         <br />
@@ -127,11 +150,12 @@ function RightPanel() {
               on-screen interactions. It laid the groundwork for adaptive input systems that improve usability on 
               touch devices by aligning digital keyboards with human ergonomics, rather than forcing users to 
               conform to fixed layouts."
-              meta="⭐ 146+ Citations • 📱 Apple, Google, Microsoft • 📅 12+ Years Active"              
+              meta="⭐ 146+ Citations • 📱 Apple, Amazon, Google • 📅 12+ Years Active"              
               mediaStaticSrc="/assets/PatentPlacard.jpg"
               mediaAnimatedSrc="/assets/PatentPlacard.jpg"
               mediaAlt="Patent Placard"
               href="https://patents.google.com/patent/US8619036"
+              tabindex="0"
             />
 
           </CardGroup>          

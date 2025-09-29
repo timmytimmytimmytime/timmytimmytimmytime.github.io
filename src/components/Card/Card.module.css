@@ -53,8 +53,6 @@
   transition: opacity 180ms ease;
   pointer-events: none;
 }
-.card:hover .mediaAnimated { opacity: 1; }
-.card:hover .mediaStatic   { opacity: 0; }
 
 .media > img, .media video, .media canvas {
   display: block; 
@@ -82,8 +80,9 @@
   font-size: 1.125rem; 
   font-weight: 400; 
   color: var(--color-text); 
-  margin: 0; 
+  margin: 0 0 0.5rem 0; 
   transition: color 180ms ease; 
+  text-transform: uppercase;
 }
 
 .description {
@@ -96,8 +95,9 @@
 
 .meta {
   margin-top: 0.75rem;
+  font-weight: 300;
   font-size: 1rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .tags {
@@ -117,20 +117,46 @@
   font-weight: 500; 
 }
 
-/* Hover frost + outline; siblings fade */
-.card:hover { 
-  background: rgba(255,255,255,0.04); 
-  border-color: rgba(148,163,184,0.12); 
-  backdrop-filter: blur(6px); 
+/* Hover/active interactions split by input type */
+
+/* Desktop / devices with real hover */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { 
+    background: rgba(255,255,255,0.04); 
+    border-color: rgba(148,163,184,0.12); 
+    backdrop-filter: blur(6px); 
+  }
+
+  .card:hover .title { 
+    color: var(--color-accent);
+  }
+
+  .card:hover .mediaAnimated { opacity: 1; }
+  .card:hover .mediaStatic   { opacity: 0; }
+
+  .cards:has(.card:hover) > .card:not(:hover) {
+    opacity: .5;
+  }
 }
 
-.card:hover .title { 
-  color: var(--color-accent);
-}
+/* Touch devices (no hover, coarse pointer) */
+@media (hover: none) and (pointer: coarse) {
+  .card:focus { 
+    background: rgba(255,255,255,0.04); 
+    border-color: rgba(148,163,184,0.12); 
+    backdrop-filter: blur(6px); 
+  }
 
+  .card:focus .title { 
+    color: var(--color-accent);
+  }
 
-.cards:has(.card:hover) > .card:not(:hover) {
-  opacity: .5;
+  .card:focus .mediaAnimated { opacity: 1; }
+  .card:focus .mediaStatic   { opacity: 0; }
+
+  .cards:has(.card:focus) > .card:not(:focus) {
+    opacity: .5;
+  }
 }
 
 /* Mobile: stack left/right */
@@ -138,8 +164,17 @@
   .card { 
     grid-template-columns: 1fr; 
     gap: 1rem; 
-    background: rgba(255,255,255,0.04); 
+    /* background: rgba(255,255,255,0.04); 
     border-color: rgba(148,163,184,0.12); 
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);  */
+  }
+
+  .right { 
+    padding-top: 1rem;
+  }
+
+  .title {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

@@ -69,7 +69,7 @@ export default function Card({
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
 
-        {meta && <p className={styles.meta}>{meta}</p>} {/* 👈 render meta here */}
+        {meta && <p className={styles.meta}>{meta}</p>}
 
         {tags.length > 0 && (
           <ul className={styles.tags}>

@@ -52,6 +52,7 @@ section {
 @media (max-width: 1024px) {
   section {
     padding-top: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   .section-description, h2, hr {

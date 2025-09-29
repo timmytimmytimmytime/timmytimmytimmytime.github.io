@@ -1,14 +1,13 @@
-import styles from "./About.module.css";
-
 function About() {
   return (
-    <div className={styles.about}>
+    <div>
       <div class="section-description">
-        <p>Customer-focused software engineer with a decade of experience delivering mobile applications and websites to millions of users, and inventor of a gesture-based input patent with 146+ industry citations.</p>
+        <p>I build software with the goal of delighting customers while solving their real problems. I love taking an idea off the whiteboard, prototyping it quickly, and shaping it into a tangable experience.</p>
 
-        <p>From Microsoft Surface IR frameworks to Getty’s Contributor app, I specialize in bridging digital and physical interactions. Recent prototypes — AirType, CountAR, and FaceTrackAR — apply XR Hands and computer vision to advance more natural and intuitive interaction models.</p>
+        <p>My journey began in <strong>consumer internet services at global scale</strong> — spanning mail, messaging, payments, and internationalized web platforms — expanded into new interface frontiers with <strong>gesture interfaces</strong>, grew through years of <strong>web frontend</strong> and <strong>mobile app</strong> development, and now continues into <strong>emerging technologies</strong>.</p> 
+        
+        <p>From computer vision and spatial interaction to AI and large language models, I’m always looking for new ways to translate innovation into experiences customers love.</p>
 
-        <p>Outside of work, I recharge through social and creative hobbies — from board games to painting minis.</p>
       </div>
 
     </div>
