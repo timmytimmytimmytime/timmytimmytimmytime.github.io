@@ -102,16 +102,19 @@ function RightPanel() {
               storeButtons={
                 <>
                   <AppStoreButton
-                    href="https://apps.apple.com/us/app/contributor-by-getty-images/id1263205244"
+                    // href="https://apps.apple.com/us/app/contributor-by-getty-images/id1263205244"
+                    href="https://web.archive.org/web/20250921153408/https://apps.apple.com/us/app/contributor-by-getty-images/id1263205244"
                     type="appstore"
                   />
 
                   <AppStoreButton
-                    href="https://play.google.com/store/apps/details?id=com.contributor"
+                    // href="https://play.google.com/store/apps/details?id=com.contributor"
+                    href="https://web.archive.org/web/20250521062019/https://play.google.com/store/apps/details?id=com.contributor"
                     type="playstore"
                   />
                 </>
               }
+              isRetired="true"
               tabindex={0}
             />
             

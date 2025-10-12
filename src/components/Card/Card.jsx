@@ -24,7 +24,8 @@ export default function Card({
   mediaAnimatedSrc,
   mediaAlt,
   storeButtons,
-  href
+  href,
+  isRetired = false
 }) {
   const resolvedMediaStaticSrc = normalizeSrc(mediaStaticSrc);
   const resolvedMediaAnimatedSrc = normalizeSrc(mediaAnimatedSrc);
@@ -33,29 +34,31 @@ export default function Card({
     <>
       <div className={styles.left}>
         <div className={styles.media}>
+          <div className={`${styles.mediaWrapper} ${isRetired ? styles.retired : ""}`}>
 
-          {/* Base/static image */}
-          {resolvedMediaStaticSrc && (
-            <img
-              className={styles.mediaStatic}
-              src={resolvedMediaStaticSrc}
-              alt={mediaAlt || title}
-              decoding="async"
-              loading="eager"
-            />
-          )}
+            {/* Base/static image */}
+            {resolvedMediaStaticSrc && (
+                <img
+                  className={styles.mediaStatic}
+                  src={resolvedMediaStaticSrc}
+                  alt={mediaAlt || title}
+                  decoding="async"
+                  loading="eager"
+                />
+            )}
 
-          {/* Animated GIF overlay (kept loaded; fades in on hover) */}
-          {resolvedMediaAnimatedSrc && (
-            <img
-              className={styles.mediaAnimated}
-              src={resolvedMediaAnimatedSrc}
-              alt={mediaAlt || title}
-              aria-hidden="true"
-              decoding="async"
-              loading="lazy"
-            />
-          )}
+            {/* Animated GIF overlay (kept loaded; fades in on hover) */}
+            {resolvedMediaAnimatedSrc && (
+              <img
+                className={styles.mediaAnimated}
+                src={resolvedMediaAnimatedSrc}
+                alt={mediaAlt || title}
+                aria-hidden="true"
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+          </div>
           
           {storeButtons && (
             <div className={styles.storeButtons}>

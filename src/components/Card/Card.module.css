@@ -117,6 +117,47 @@
   font-weight: 500; 
 }
 
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: .25rem;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1.15;
+  transform: translateY(6px);
+}
+
+/* match image sizing to your .media > img */
+.mediaWrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* hover scale remains intact */
+.mediaWrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ribbon overlay when retired */
+.retired::after {
+  content: "RETIRED";
+  position: absolute;
+  top: 20px;
+  right: -32px;
+  transform: rotate(45deg);
+  background: rgba(214, 24, 24, 0.956);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 4px 28px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* Hover/active interactions split by input type */
 
 /* Desktop / devices with real hover */
