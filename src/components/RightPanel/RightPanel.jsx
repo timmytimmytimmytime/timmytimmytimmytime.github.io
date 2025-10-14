@@ -19,7 +19,7 @@ function RightPanel() {
           <CardGroup title="Prototypes">
             <div class="section-description" tabindex={0}>
               <p>
-                Exploring new interaction models through rapid prototyping in Unity with OpenXR and OpenCV — from hand-tracking keyboards to mixed-reality applications and open-source gesture libraries. These projects are my testbed for future-facing ideas: validating concepts, refining workflows, and pushing the boundaries of spatial computing. Beyond XR, I also experiment with AI, building tools like a Firefox plugin that fact-checks LLMs in real time to cut down on omissions and fabrications. Together, these prototypes reflect how I investigate emerging technologies and translate them into practical, user-centered possibilities.
+                Exploring new interaction models through rapid prototyping in Unity with OpenXR and OpenCV — from hand-tracking keyboards to mixed-reality applications and open-source gesture libraries. These projects are my testbed for future-facing ideas: validating concepts, refining workflows, and pushing the boundaries of spatial computing. Beyond XR, experimenting with AI, building tools like a Firefox plugin that fact-checks LLMs in real time to cut down on omissions and fabrications. Together, these prototypes reflect how I investigate emerging technologies and translate them into practical, user-centered possibilities.
               </p>
             </div> 
 
@@ -94,7 +94,7 @@ function RightPanel() {
 
             <Card
               title="Contributor by Getty Images"
-              description="A React Native app for professional photographers to upload creative content, access briefs tailored to their expertise, and monitor ongoing performance and earnings. I led development on several core features as my primary project for six years, guiding the app through major updates and platform transitions. The app achieved more than 1M downloads across iOS and Android with consistent 4.7+ ratings, becoming the central workflow tool for over 200K contributors worldwide and remaining one of Getty’s highest-impact mobile products."
+              description="A React Native app for professional photographers to upload creative content, access briefs tailored to their expertise, and monitor ongoing performance and earnings. Led development of several core features over six years, guiding the app through major updates and platform transitions. The app achieved over 1M downloads across iOS and Android with consistent 4.7+ ratings, becoming the central workflow tool for over 200K contributors worldwide and remaining one of Getty’s highest-impact mobile products."
               tags={["React Native", "iOS", "Android", "JavaScript", "REST APIs"]}
               mediaStaticSrc="/assets/ContributorStoreScreenshot.JPEG"
               mediaAnimatedSrc="/assets/ContributorStoreScreenshot.JPEG"
