@@ -178,18 +178,30 @@
   .cards:has(.card:hover) > .card:not(:hover) {
     opacity: .5;
   }
+
+  .card:hover .description {
+    color: var(--color-text); 
+  }
 }
 
 /* Touch devices (no hover, coarse pointer) */
 @media (hover: none) and (pointer: coarse) {
   .card { 
     background: rgba(255,255,255,0.04); 
-    border-color: rgba(148,163,184,0.12); 
+    border-color: rgba(148,163,184,0.5); 
     backdrop-filter: blur(6px); 
   }
 
   .mediaAnimated { opacity: 1; }
   .mediaStatic   { opacity: 0; }
+
+  .card .title { 
+    color: var(--color-accent);
+  }
+
+  .description {
+    color: var(--color-text); 
+  }
 }
 
 /* Mobile: stack left/right */
@@ -197,9 +209,6 @@
   .card { 
     grid-template-columns: 1fr; 
     gap: 1rem; 
-    /* background: rgba(255,255,255,0.04); 
-    border-color: rgba(148,163,184,0.12); 
-    backdrop-filter: blur(6px);  */
   }
 
   .right { 
