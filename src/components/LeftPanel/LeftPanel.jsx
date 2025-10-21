@@ -20,11 +20,12 @@ function LeftPanel() {
           Software engineer chasing the space between the digital and the real
         </p>
 
+        <SocialLinks />
+
         <BreadCrumb />
       </header>
 
       <div className={styles.panelFooter}>
-        <SocialLinks />
         {showThemeSwitcher && <ThemeSwitcher />}
       </div>
 

@@ -1,8 +1,11 @@
 .socialLinks {
-  display: flex;
-  flex-direction: row;  /* horizontal */
-  gap: 2rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 per row */
+  gap: 1rem 2rem; /* row gap | column gap */
+  justify-items: left;
+  margin-bottom: 2rem;
+  /* outline: auto; */
+
 }
 
 /* link + label */
@@ -10,7 +13,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-text-muted);                   /* default: white */
+  color: var(--color-text);                   /* default: white */
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 100;
@@ -32,20 +35,8 @@
   color: var(--color-accent);
 }
 
-@media (max-width: 1380px) and (min-width: 1025px) {
+@media (max-width: 1024px) {
   .socialLinks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem 2rem; /* row gap | column gap */
-    justify-items: start;
-  }
-}
-
-@media (max-width: 500px) {
-  .socialLinks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* always 2 per row */
-    gap: 1rem 2rem; /* row gap | column gap */
-    justify-items: start; /* align links left in each cell */
+    justify-items: center;
   }
 }
