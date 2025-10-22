@@ -10,7 +10,7 @@ function About() {
         
         <p>From computer vision and spatial interaction to AI and large language models, I’m always looking for new ways to translate innovation into experiences customers love.</p>
 
-        <p style={{fontWeight: 500 }}>Internet&nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp;Gestures&nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp;Web&nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp;Mobile&nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp;Spatial & AI&nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp;<strong>Smarter Mobile Experiences</strong></p>
+        <p style={{fontWeight: 500 }}>Internet&nbsp; → &nbsp;Gestures&nbsp; → &nbsp;Web&nbsp; → &nbsp;Mobile&nbsp; → &nbsp;Spatial & AI&nbsp;&nbsp;&nbsp; → &nbsp;Smarter Mobile Experiences</p>
       </div>
 
     </div>

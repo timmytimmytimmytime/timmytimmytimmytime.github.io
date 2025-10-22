@@ -20,7 +20,7 @@ function LeftPanel() {
           Software engineer chasing the space between the digital and the real
         </p>
 
-        <SocialLinks />
+        <SocialLinks /> 
 
         <BreadCrumb />
       </header>
