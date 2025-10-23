@@ -204,6 +204,17 @@
   }
 }
 
+/* Tablet: stack left/right */
+@media (max-width: 1024px) {
+  .title {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+  .groupTitle {
+        margin-left: 0;
+  }
+}
+
 /* Mobile: stack left/right */
 @media (max-width: 768px) {
   .card { 
@@ -213,10 +224,5 @@
 
   .right { 
     padding-top: 1rem;
-  }
-
-  .title {
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 }
