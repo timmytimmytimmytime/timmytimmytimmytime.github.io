@@ -1,8 +1,10 @@
+import styles from './About.module.css';
+
 function About() {
   return (
     <div>
       <div class="section-description">
-        <p><strong>GOAL: To craft mobile experiences that feel natural, purposeful, and exciting.</strong></p>
+        <p class={styles.goal}><strong>GOAL: To craft Mobile and XR experiences that feel natural, purposeful, and exciting.</strong></p>
 
         <p>I build software that delights customers while solving real-world problems, taking ideas off the whiteboard, prototyping quickly, and shaping them into tangible experiences.</p>
 
