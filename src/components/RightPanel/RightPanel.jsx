@@ -24,6 +24,17 @@ function RightPanel() {
             </div> 
 
             <Card
+              title="Flutter Cross-Platform Demo"
+              description="A fully themed Flutter application demonstrating adaptive layouts, Material 3 styling, and persistent navigation across mobile and web. The app includes live metric panels, status cards, notifications, and chat screens—each built to showcase Flutter’s capability for production-grade cross-platform UI with a single codebase. It also features a custom AdaptiveViewport that simulates a mobile device frame in the browser for responsive testing."
+              tags={["Flutter", "Dart", "MaterialUI", "Adaptive Layout", "Cross-Platform"]}
+              mediaStaticSrc="/assets/Flutter-demo-static.jpg"
+              mediaAnimatedSrc="/assets/Flutter-demo.gif"
+              mediaAlt="Flutter Cross-Platform Demo App"
+              href="https://timmytimmytimmytime.github.io/flutter_crossplatform_demo/"
+              tabindex={0}
+            />
+
+            <Card
               title="CountAR - Finger Counting"
               description="CountAR is a Unity prototype for Meta Quest 3 that recognizes how many fingers you’re holding up and updates the count in real time using XR Hands. It’s tuned for low-latency, stable detection (0–5 per hand), with clean UI feedback that makes it great for gesture lessons, quick demos, and MR/AR onboarding. The project is intentionally small and dependency-light so you can drop it into other scenes as a building block for gesture-driven UX."
               tags={["Unity", "XR Hands", "Meta Quest 3", "Hand Tracking", "C#"]}
