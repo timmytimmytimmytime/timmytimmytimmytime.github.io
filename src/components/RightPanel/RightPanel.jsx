@@ -26,7 +26,7 @@ function RightPanel() {
             <Card
               title="Flutter Cross-Platform Demo"
               description="A fully themed Flutter application demonstrating adaptive layouts, Material 3 styling, and persistent navigation across mobile and web. The app includes live metric panels, status cards, notifications, and chat screens—each built to showcase Flutter’s capability for production-grade cross-platform UI with a single codebase. It also features a custom AdaptiveViewport that simulates a mobile device frame in the browser for responsive testing."
-              tags={["Flutter", "Dart", "MaterialUI", "Adaptive Layout", "Cross-Platform"]}
+              tags={["Flutter", "Dart", "Material 3", "Cross-Platform", "Theme Switching"]}
               mediaStaticSrc="/assets/Flutter-demo-static.jpg"
               mediaAnimatedSrc="/assets/Flutter-demo.gif"
               mediaAlt="Flutter Cross-Platform Demo App"
