@@ -19,13 +19,13 @@ function RightPanel() {
           <CardGroup title="Prototypes">
             <div class="section-description" tabindex={0}>
               <p>
-                Exploring new interaction models through rapid prototyping in Unity with OpenXR and OpenCV — from hand-tracking keyboards to mixed-reality applications and open-source gesture libraries. These projects are my testbed for future-facing ideas: validating concepts, refining workflows, and pushing the boundaries of spatial computing. Beyond XR, experimenting with AI, building tools like a Firefox plugin that fact-checks LLMs in real time to cut down on omissions and fabrications. Together, these prototypes reflect how I investigate emerging technologies and translate them into practical, user-centered possibilities.
+                Rapid prototypes that make new interactions possible—mobile, spatial, and experimental. From gesture control to adaptive layouts and computer vision, each build is about pushing devices to do something unexpected.
               </p>
             </div> 
 
             <Card
               title="Flutter Cross-Platform Demo"
-              description="A fully themed Flutter application demonstrating adaptive layouts, Material 3 styling, and persistent navigation across mobile and web. The app includes live metric panels, status cards, notifications, and chat screens—each built to showcase Flutter’s capability for production-grade cross-platform UI with a single codebase. It also features a custom AdaptiveViewport that simulates a mobile device frame in the browser for responsive testing."
+              description="A Flutter application demonstrating adaptive layouts, persistent navigation, and dynamic light/dark theming built with Material 3 across iOS, Android, macOS, and Web. The app includes live metric panels, status cards, notifications, and chat screens—showcasing Flutter’s strength in creating polished, production-grade experiences from a single codebase."
               tags={["Flutter", "Dart", "Material 3", "Cross-Platform", "Theme Switching"]}
               mediaStaticSrc="/assets/Flutter-demo-static.jpg"
               mediaAnimatedSrc="/assets/Flutter-demo.gif"
