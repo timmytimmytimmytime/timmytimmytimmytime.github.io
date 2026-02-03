@@ -25,6 +25,7 @@ export default function Card({
   mediaAlt,
   storeButtons,
   href,
+  overrideStyle,
   isRetired = false
 }) {
   const resolvedMediaStaticSrc = normalizeSrc(mediaStaticSrc);
@@ -44,6 +45,7 @@ export default function Card({
                   alt={mediaAlt || title}
                   decoding="async"
                   loading="eager"
+                  style={overrideStyle?.imageDimensions}
                 />
             )}
 
@@ -56,6 +58,7 @@ export default function Card({
                 aria-hidden="true"
                 decoding="async"
                 loading="lazy"
+                style={overrideStyle?.imageDimensions}
               />
             )}
           </div>
