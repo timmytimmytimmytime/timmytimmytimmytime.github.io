@@ -5,7 +5,7 @@ function MobileApps() {
   return (
         <section id="mobile">
           <CardGroup title="Mobile Apps">
-            <div class="section-description" tabindex={0}>
+            <div class="section-description" tabindex={1}>
               <p>
                 Mobile apps built as portfolio pieces and technical demonstrations. These showcase different platforms and development approaches, with the focus on solid implementation.
               </p>

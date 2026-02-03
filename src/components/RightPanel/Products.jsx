@@ -6,7 +6,7 @@ function Products() {
   return (
         <section id="products">
           <CardGroup title="Products">
-            <div class="section-description" tabindex={0}>
+            <div class="section-description" tabindex={2}>
               <p>
                 Over two decades of delivering products used worldwide across consumer, enterprise, and creative industries.
               </p>

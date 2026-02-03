@@ -1,21 +1,26 @@
 import styles from './About.module.css';
+import CardGroup from "../Card/CardGroup";
 
 function About() {
   return (
-    <div>
-      <div class="section-description">
-        <p class={styles.goal}><strong>Crafting Mobile experiences that feel natural, purposeful, and exciting.</strong></p>
+    <section id="summary" tabindex={0}>
+      <CardGroup title="Summary">
+        <div>
+          <div class="section-description">
 
-        <p>I build software that delights customers while solving real-world problems, taking ideas off the whiteboard, prototyping quickly, and shaping them into tangible experiences.</p>
+            <p class={styles.goal}><strong>Crafting Mobile experiences that feel natural, purposeful, and exciting.</strong></p>
 
-        <p>My journey began in consumer internet services at global scale — spanning mail, messaging, payments, and internationalized web platforms — expanded into new interface frontiers with gesture interfaces, grew through years of web frontend and mobile app development, and now continues into emerging technologies that connect digital products with the physical world.</p> 
-        
-        <p>From computer vision and spatial interaction to AI and large language models, I’m always looking for new ways to translate innovation into experiences customers love.</p>
+            <p>I build native iOS and Android apps, as well as cross-platform mobile applications, that delight users while solving real-world problems — prototyping quickly, iterating based on feedback, and shipping polished products.</p>
+            
+            <p>I've worked on consumer internet services at global scale, explored gesture-based interfaces, built web applications across diverse platforms, and spent years in mobile engineering. Along the way, I've incorporated emerging technologies like AI, XR and CV, always focused on translating innovation into experiences users love.</p>
 
-        <p style={{fontWeight: 500 }}>Internet&nbsp; → &nbsp;Gestures&nbsp; → &nbsp;Web&nbsp; → &nbsp;Mobile&nbsp; → &nbsp;Spatial & AI&nbsp;&nbsp;&nbsp; → &nbsp;Smarter Mobile Experiences</p>
-      </div>
+            <p style={{fontWeight: 500 }}>Internet&nbsp; → &nbsp;Gestures&nbsp; → &nbsp;Web&nbsp; → &nbsp;Mobile&nbsp; → &nbsp;AI/XR</p>
 
-    </div>
+          </div>
+
+        </div>
+      </CardGroup>
+    </section>
   );
 }
 

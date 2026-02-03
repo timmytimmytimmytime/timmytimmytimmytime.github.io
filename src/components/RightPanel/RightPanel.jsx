@@ -1,6 +1,5 @@
 import styles from "./RightPanel.module.css";
 import AboutSection from "../About/About";
-import CardGroup from "../Card/CardGroup";
 import MobileApps from "./MobileApps";
 import Products from './Products';
 import Prototypes from './Prototypes';
@@ -11,11 +10,7 @@ function RightPanel() {
     <main className={styles.rightPanel}>
       <div className={styles.contentCol}>
 
-        <section id="summary" tabindex={0}>
-          <CardGroup title="Summary">
-            <AboutSection />
-          </CardGroup>
-        </section>
+        <AboutSection />
 
         <MobileApps />
 

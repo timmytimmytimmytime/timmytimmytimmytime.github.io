@@ -6,7 +6,7 @@ function Achievements() {
 
         <section id="achievements">
           <CardGroup title="Achievements">
-            <div class="section-description" tabindex={0}>
+            <div class="section-description" tabindex={4}>
               <p>Invented a Microsoft Surface patent for rendering virtual keyboards relative to hand position, a solution cited over 140 times by major companies. This recognition reflects my ability to solve novel interaction challenges and contribute ideas that shape industry standards.</p>
             </div> 
 

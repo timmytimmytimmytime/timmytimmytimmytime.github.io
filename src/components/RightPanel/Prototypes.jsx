@@ -5,7 +5,7 @@ function Prototypes() {
   return (
         <section id="xr prototypes">
           <CardGroup title="XR Prototypes">
-            <div class="section-description" tabindex={0}>
+            <div class="section-description" tabindex={3}>
               <p>
                 Rapid prototypes that make new interactions possible—mobile, spatial, and experimental. From gesture control to adaptive layouts and computer vision, each build is about pushing devices to do something unexpected.
               </p>
