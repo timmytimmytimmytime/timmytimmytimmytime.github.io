@@ -14,7 +14,7 @@ function About() {
             
             <p>I've worked on consumer internet services at global scale, explored gesture-based interfaces, built web applications across diverse platforms, and spent years in mobile engineering. Along the way, I've incorporated emerging technologies like AI, XR and CV, always focused on translating innovation into experiences users love.</p>
 
-            <p style={{fontWeight: 500 }}>Internet&nbsp; → &nbsp;Gestures&nbsp; → &nbsp;Web&nbsp; → &nbsp;Mobile&nbsp; → &nbsp;AI/XR</p>
+            <p style={{fontWeight: 500 }}>Internet&nbsp; → &nbsp;Gestures&nbsp; → &nbsp;Web&nbsp; → &nbsp;Mobile&nbsp; → &nbsp;AI/XR&nbsp; → &nbsp;Richer Experiences</p>
 
           </div>
 
