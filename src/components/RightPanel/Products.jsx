@@ -18,7 +18,7 @@ function Products() {
               <p>
                 <strong>Microsoft Surface PixelSense</strong> — built natural user interface software for multi-touch and gesture-based experiences.
               </p>
-
+{/* 
               <p>
                 <strong>Microsoft Internet Explorer & Exchange Server</strong> — engineered internationalization tools for Internet Explorer and shipped mail/messaging services in Exchange serving hundreds of millions of users.
               </p>
@@ -29,7 +29,7 @@ function Products() {
 
               <p>
                 <strong>Intel WBEM</strong> — advanced systems management and interoperability standards.
-              </p>
+              </p> */}
 
               <p>
                 Along the way I’ve driven feature delivery, owned infrastructure, integrated machine learning into production workflows, and mentored engineers within agile teams.

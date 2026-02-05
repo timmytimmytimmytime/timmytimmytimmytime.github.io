@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 function MobileApps() {
   return (
         <section id="mobile">
-          <CardGroup title="Mobile Apps">
+          <CardGroup title="Mobile Samples">
             <div class="section-description" tabindex={1}>
               <p>
                 Mobile apps built as portfolio pieces and technical demonstrations. These showcase different platforms and development approaches, with the focus on solid implementation.
@@ -19,7 +19,7 @@ function MobileApps() {
               mediaAnimatedSrc="/assets/MyWeather-demo.gif"
               mediaAlt="iOS Weather App"
               href="https://github.com/timmytimmytimmytime/iOS-Weather"
-              overrideStyle={{ imageDimensions: { display: 'block', margin: '0 auto', overflow: 'hidden', objectFit: 'cover', objectPosition: 'top', height: '200px', width: '180px' } }}
+              overrideStyle={{ imageDimensions: { display: 'block', margin: '0 auto', overflow: 'hidden', objectFit: 'cover', objectPosition: 'top', height: '240px', width: '180px' } }}
               tabindex={0}
             />
 
